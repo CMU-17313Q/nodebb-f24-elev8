@@ -41,6 +41,10 @@ module.exports = function (User) {
 			const usersData = await User.getUsersFields(uids, data.fields);
 			csvContent += usersData.reduce((memo, user) => {
 				memo += `${data.fields.map(field => user[field]).join(',')}\n`;
+				function getUserFieldValue(field) {
+					return user[field];
+				}
+				memo += `${data.fields.map(getUserFieldValue).join(',')}\n`;
 				return memo;
 			}, '');
 		}, {});

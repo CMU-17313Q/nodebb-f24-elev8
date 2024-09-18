@@ -86,3 +86,4 @@ middleware.checkPrivileges = helpers.try(async (req, res, next) => {
 		res.redirect(`${nconf.get('relative_path')}/login?local=1`);
 	}
 });
+

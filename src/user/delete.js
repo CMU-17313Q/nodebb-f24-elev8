@@ -238,3 +238,4 @@ module.exports = function (User) {
 		await rimraf(folder);
 	}
 };
+

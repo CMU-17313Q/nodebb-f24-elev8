@@ -1,15 +1,19 @@
 'use strict';
+
 const nconf = require('nconf');
 const user = require('../user');
 const meta = require('../meta');
 const plugins = require('../plugins');
 const privileges = require('../privileges');
 const helpers = require('./helpers');
+
 const controllers = {
 	admin: require('../controllers/admin'),
 	helpers: require('../controllers/helpers'),
 };
+
 const middleware = module.exports;
+
 middleware.buildHeader = helpers.try(async (req, res, next) => {
 	res.locals.renderAdminHeader = true;
 	if (req.method === 'GET') {
@@ -20,6 +24,7 @@ middleware.buildHeader = helpers.try(async (req, res, next) => {
 	res.locals.config = await controllers.admin.loadConfig(req);
 	next();
 });
+
 middleware.checkPrivileges = helpers.try(async (req, res, next) => {
 	if (isGuest(req, res)) {
 		console.log('>>Guest Check Ran........');
@@ -45,7 +50,6 @@ middleware.checkPrivileges = helpers.try(async (req, res, next) => {
 });
 
 // Function to check if the user is a guest
-// check if the user is a guest
 function isGuest(req, res) {
 	if (req.uid <= 0) {
 		console.log('>>Instance Ran........');
@@ -57,8 +61,6 @@ function isGuest(req, res) {
 }
 
 // Function to check if the user has the necessary privilege for the requested path
-// check if the user has the necessary privilege for the requested path
-// code creation assisted
 async function hasPrivilegeForPath(req, path) {
 	if (path) {
 		console.log('>>PrevPath Check........');
@@ -71,26 +73,21 @@ async function hasPrivilegeForPath(req, path) {
 }
 
 // Function to check if the user has a password
-// check if the user has password
 async function userHasPassword(req) {
 	console.log('>>Pass Check Ran........');
 	return await user.hasPassword(req.uid);
 }
 
 // Function to determine if the user needs to re-login
-// determine if the user needs to relogin or not
-// code creation assisted
 function shouldRelogin(req) {
 	console.log('>>Relog Check Ran........');
 	const loginTime = req.session.meta ? req.session.meta.datetime : 0;
 	const adminReloginDuration = meta.config.adminReloginDuration * 60000;
 	return !(meta.config.adminReloginDuration === 0 ||
-	(loginTime && parseInt(loginTime, 10) > Date.now() - adminReloginDuration));
+		(loginTime && parseInt(loginTime, 10) > Date.now() - adminReloginDuration));
 }
 
 // Function to handle user re-login
-// handle relogin if necessary
-// code creation assisted
 async function handleRelogin(req, res) {
 	console.log('>>HandleReLogin Ran........');
 	let returnTo = req.path;
@@ -112,8 +109,6 @@ async function handleRelogin(req, res) {
 }
 
 // Function to extend the user's logout timer
-// extend the user's logout timer
-// code creation assisted
 function extendLogoutTimer(req) {
 	console.log('>>Instance Ran........');
 	console.log('>>Extend Ran........');
@@ -124,3 +119,4 @@ function extendLogoutTimer(req) {
 		req.session.meta.datetime += Math.min(60000, adminReloginDuration);
 	}
 }
+

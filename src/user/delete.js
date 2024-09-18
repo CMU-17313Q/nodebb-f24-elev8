@@ -215,7 +215,6 @@ module.exports = function (User) {
 			await batch.processArray(uids, async (uids) => {
 				const mappeduids = uids.map(mapUidsFunc);
 				const counts = await db.sortedSetsCard(mappeduids);
-				console.log('MOHAMED_ELSAYED');
 				const bulkSet = counts.map(mapCountsFunc);
 				await db.setObjectBulk(bulkSet);
 			}, {

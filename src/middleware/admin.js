@@ -119,4 +119,3 @@ function extendLogoutTimer(req) {
 		req.session.meta.datetime += Math.min(60000, adminReloginDuration);
 	}
 }
-

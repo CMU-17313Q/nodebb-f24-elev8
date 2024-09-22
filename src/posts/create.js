@@ -100,7 +100,7 @@ module.exports = function (Posts) {
 			db.incrObjectField(`post:${postData.toPid}`, 'replies'),
 		]);
 	}
-	
+
 	async function checkToPid(toPid, uid) {
 		const [toPost, canViewToPid] = await Promise.all([
 			Posts.getPostFields(toPid, ['pid', 'deleted']),

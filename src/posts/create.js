@@ -36,7 +36,7 @@ module.exports = function (Posts) {
 		const { uid } = data;
 		const { tid } = data;
 		console.log("this is the file responsible for creating a post");
-		const content = data.content.toString();
+		let content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
 

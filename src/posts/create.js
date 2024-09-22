@@ -30,6 +30,20 @@ function loadBadWords() {
 
 loadBadWords();
 
+
+function checkifBadWord(content) {
+    console.log("Checking if the words in the content are in the dictionary of bad words");
+    const words = content.split(/\s+/); // Split content into words
+    console.log("words in the content: ", words);
+    for (const word of words) {
+        if (badWords.has(word.toLowerCase())) {
+            console.log("The word", word, "is a bad word");
+            return true; // Return true there is bad words
+        }
+    }
+    return false; // Return false if no bad words
+}
+
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
@@ -47,7 +61,13 @@ module.exports = function (Posts) {
 		if (data.toPid) {
 			await checkToPid(data.toPid, uid);
 		}
-		
+
+        if (checkifBadWord(content)) {
+            data.content = "****" // Use the censoring function to replace bad words with * (later for haya)
+        } else {
+            data.content = content;
+        }
+
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
 			pid: pid,

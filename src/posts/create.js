@@ -1,7 +1,6 @@
 'use strict';
 
 const _ = require('lodash');
-
 const fs = require('fs');
 const path = require('path');
 const meta = require('../meta');
@@ -29,22 +28,21 @@ function loadBadWords() {
 
 loadBadWords();
 
-
 function checkifBadWord(content) {
-    console.log('Checking if the words in the post are in the dictionary of bad words');
-    const words = content.split(/\s+/); // Split content of the post into words
-    console.log('words in the content: ', words);
-    let found = false;
+	console.log('Checking if the words in the post are in the dictionary of bad words');
+	const words = content.split(/\s+/); // Split content of the post into words
+	console.log('words in the content: ', words);
+	let found = false;
 
-    for (const word of words) {
-        if (badWords.has(word.toLowerCase())) {
-            console.log('The word', word, 'is a bad word');
-            found = true;
-        } else {
-            console.log('The word', word, 'is not a bad word');
-        }
-    }
-    return found;
+	for (const word of words) {
+		if (badWords.has(word.toLowerCase())) {
+			console.log('The word', word, 'is a bad word');
+			found = true;
+		} else {
+			console.log('The word', word, 'is not a bad word');
+		}
+	}
+	return found;
 }
 
 module.exports = function (Posts) {
@@ -66,18 +64,18 @@ module.exports = function (Posts) {
 		}
 		console.log('content before censoring bad words: ', content);
 		if (checkifBadWord(content)) {
-			data.content = "*****" // Use the censoring function to replace bad words with * (later for haya)
+			data.content = '****'; // Use the censoring function to replace bad words with asterisks
 		} else { // if the content does not contain bad words, then leave it as it is
 			data.content = content;
 		}
-		console.log('content after censoring bad words: ', content);
+		console.log('content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
 			pid: pid,
 			uid: uid,
 			tid: tid,
-			content: content,
+			content: data.content,
 			timestamp: timestamp,
 		};
 

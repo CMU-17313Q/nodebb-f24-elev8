@@ -10,27 +10,32 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
+
+// to read the txt file containing bad words
 const fs = require('fs');
 const path = require('path');
+const { check } = require('yargs');
 
 // using a set to store bad words for faster search
 let badWords=  new Set();
-function badWordsFile() {
+function loadBadWords() {
     const filePath = path.join(__dirname, '../bad-words.txt');
-    const data = fs.readFileSync(filePath, 'utf8');
-    badWords = new Set(data.split(/\r?\n/));
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        badWords = new Set(data.split(/\r?\n/));
+    } catch (err) {
+        console.error('Error reading bad words file:', err);
+    }
 }
-badWordsFile();
 
-
-
+loadBadWords();
 
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
 		const { uid } = data;
 		const { tid } = data;
-		console.log("this is the file resposninle for creating a post");
+		console.log("this is the file responsible for creating a post");
 		const content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
@@ -42,7 +47,7 @@ module.exports = function (Posts) {
 		if (data.toPid) {
 			await checkToPid(data.toPid, uid);
 		}
-
+		
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
 			pid: pid,
@@ -95,7 +100,7 @@ module.exports = function (Posts) {
 			db.incrObjectField(`post:${postData.toPid}`, 'replies'),
 		]);
 	}
-
+	
 	async function checkToPid(toPid, uid) {
 		const [toPost, canViewToPid] = await Promise.all([
 			Posts.getPostFields(toPid, ['pid', 'deleted']),

@@ -10,7 +10,18 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
-const badwords = require('../bad-words.txt');
+const fs = require('fs');
+const path = require('path');
+
+// using a set to store bad words for faster search
+let badWords=  new Set();
+function badWordsFile() {
+    const filePath = path.join(__dirname, '../bad-words.txt');
+    const data = fs.readFileSync(filePath, 'utf8');
+    badWords = new Set(data.split(/\r?\n/));
+}
+badWordsFile();
+
 
 
 

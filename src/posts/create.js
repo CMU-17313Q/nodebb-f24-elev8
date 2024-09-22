@@ -10,6 +10,9 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
+const badwords = require('../bad-words.txt');
+
+
 
 module.exports = function (Posts) {
 	Posts.create = async function (data) {

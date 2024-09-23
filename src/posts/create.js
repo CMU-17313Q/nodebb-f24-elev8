@@ -27,7 +27,7 @@ function loadBadWords() {
 }
 
 loadBadWords();
-
+/*
 function checkifBadWord(content) {
 	console.log('Checking if the words in the post are in the dictionary of bad words');
 	const words = content.split(/\s+/); // Split content of the post into words
@@ -44,7 +44,7 @@ function checkifBadWord(content) {
 	}
 	return found;
 }
-
+*/
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead

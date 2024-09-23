@@ -1,7 +1,7 @@
 {
   "name": "nodebb-plugin-censor-words",
   "version": "1.0.0",
-  "description": "A NodeBB Plugin to censor bad words in posts",
+  "description": "A NodeBB plugin to censor bad words in posts",
   "main": "library.js",
   "dependencies": {},
   "nbbpm": {

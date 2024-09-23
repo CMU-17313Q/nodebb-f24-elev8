@@ -63,7 +63,7 @@ module.exports = function (Posts) {
 			await checkToPid(data.toPid, uid);
 		}
 		console.log('Content before censoring bad words: ', content);
-		data.content = censorBadWords(content);  // Only replace bad words, leave the rest intact
+		data.content = censorBadWords(content);// Only replace bad words, leave the rest intact
 		console.log('Content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');
@@ -132,18 +132,18 @@ module.exports = function (Posts) {
 	function censorBadWords(content) {
 		console.log('Checking if the words in the post are in the dictionary of bad words');
 		let censoredContent = '';
-		const words = content.split(/\s+/);  // Split content into individual words
+		const words = content.split(/\s+/);// Split content into individual words
 		for (const word of words) {
-			const cleanWord = word.replace(/[^\w\s]/gi, '');  // Remove special characters before checking
+			const cleanWord = word.replace(/[^\w\s]/gi, '');// Remove special characters before checking
 			if (badWords.has(cleanWord.toLowerCase())) {
 				// Replace bad word with asterisks matching its length
 				const asterisks = '*'.repeat(cleanWord.length);
 				censoredContent += asterisks + ' ';
 			} else {
-				censoredContent += word + ' ';  // Add the original word if it's not a bad word
+				censoredContent += word + ' ';// Add the original word if it's not a bad word
 			}
 		}
-		return censoredContent.trim();  // Return censored content without extra spaces
+		return censoredContent.trim();// Return censored content without extra spaces
 	}
 
 

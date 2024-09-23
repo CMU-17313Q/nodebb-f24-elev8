@@ -132,18 +132,17 @@ module.exports = function (Posts) {
 	function censorBadWords(content) {
 		console.log('Checking if the words in the post are in the dictionary of bad words');
 		let censoredContent = '';
-		const words = content.split(/\s+/);  // Use const as this variable does not change;Split content into individual words
+		const words = content.split(/\s+/);  // Split content into individual words
 		for (const word of words) {
 			const cleanWord = word.replace(/[^\w\s]/gi, '');  // Remove special characters before checking
-			if (badWords.has(word.toLowerCase())) {
-				censoredContent += '**** ';
-			}			// Replace bad word with asterisks
-			else {
+			if (badWords.has(cleanWord.toLowerCase())) {
+				// Replace bad word with asterisks matching its length
+				const asterisks = '*'.repeat(cleanWord.length);
+				censoredContent += asterisks + ' ';
+			} else {
 				censoredContent += word + ' ';  // Add the original word if it's not a bad word
 			}
 		}
-		// The logic for checking words will go here
-
 		return censoredContent.trim();  // Return censored content without extra spaces
 	}
 

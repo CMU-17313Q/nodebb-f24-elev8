@@ -141,11 +141,11 @@ module.exports = function (Posts) {
 			else {
 				censoredContent += word + ' ';  // Add the original word if it's not a bad word
 			}
-		}			
+		}
 		// The logic for checking words will go here
-	
+
 		return censoredContent.trim();  // Return censored content without extra spaces
-	}	
+	}
 
 
 };

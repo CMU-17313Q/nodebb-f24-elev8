@@ -139,11 +139,11 @@ module.exports = function (Posts) {
 		const words = content.split(/\s+/);  // Split content into individual words
 		for (const word of words) {
 			if (badWords.has(word.toLowerCase())) {
-				console.log(`The word "${word}" is a bad word`);
+				censoredContent += '**** ';  // Placeholder for bad words (logic will be improved later)
 			} else {
-				console.log('The word', word, 'is not a bad word');
+				censoredContent += word + ' ';  // Add the original word
 			}
-		}		
+		 }	
 		// The logic for checking words will go here
 	
 	

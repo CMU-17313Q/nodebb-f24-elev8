@@ -146,8 +146,7 @@ module.exports = function (Posts) {
 		}			
 		// The logic for checking words will go here
 	
-	
-		return censoredContent.trim();  // Return the censored content
+		return censoredContent.trim();  // Return censored content without extra spaces
 	}	
 
 

@@ -140,7 +140,7 @@ module.exports = function (Posts) {
 				const asterisks = '*'.repeat(cleanWord.length);
 				censoredContent += asterisks + ' ';
 			} else {
-				censoredContent += word + ' ';// Add the original word if it's not a bad word
+				censoredContent += `${word} `;// Add the original word if it's not a bad word
 			}
 		}
 		return censoredContent.trim();// Return censored content without extra spaces

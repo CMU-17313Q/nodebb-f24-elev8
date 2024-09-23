@@ -138,7 +138,7 @@ module.exports = function (Posts) {
 			if (badWords.has(cleanWord.toLowerCase())) {
 				// Replace bad word with asterisks matching its length
 				const asterisks = '*'.repeat(cleanWord.length);
-				censoredContent += `${word} `;
+				censoredContent += `${asterisks} `;
 			} else {
 				censoredContent += `${word} `;// Add the original word if it's not a bad word
 			}

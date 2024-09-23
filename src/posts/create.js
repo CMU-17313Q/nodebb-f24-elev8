@@ -133,4 +133,22 @@ module.exports = function (Posts) {
 			throw new Error('[[error:invalid-pid]]');
 		}
 	}
+	function censorBadWords(content) {
+		console.log('Checking if the words in the post are in the dictionary of bad words');
+		let censoredContent = '';
+		const words = content.split(/\s+/);  // Split content into individual words
+		for (const word of words) {
+			if (badWords.has(word.toLowerCase())) {
+				console.log(`The word "${word}" is a bad word`);
+			} else {
+				console.log('The word', word, 'is not a bad word');
+			}
+		}		
+		// The logic for checking words will go here
+	
+	
+		return censoredContent.trim();  // Return the censored content
+	}	
+
+
 };

@@ -145,6 +145,4 @@ module.exports = function (Posts) {
 		}
 		return censoredContent.trim();
 	}
-
-
 };

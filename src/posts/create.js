@@ -135,8 +135,9 @@ module.exports = function (Posts) {
 		const words = content.split(/\s+/);  // Split content into individual words
 		for (const word of words) {
 			if (badWords.has(word.toLowerCase())) {
-				censoredContent += '**** ';  // Replace bad word with asterisks
-			} else {
+				censoredContent += '**** ';
+			}			// Replace bad word with asterisks
+			else {
 				censoredContent += word + ' ';  // Add the original word if it's not a bad word
 			}
 		}			

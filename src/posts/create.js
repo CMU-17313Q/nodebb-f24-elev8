@@ -1,7 +1,8 @@
 'use strict';
 
 const _ = require('lodash');
-
+const fs = require('fs');
+const path = require('path');
 const meta = require('../meta');
 const db = require('../database');
 const plugins = require('../plugins');
@@ -11,11 +12,45 @@ const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
 
+// to read the txt file containing bad words
+
+// using a set to store bad words for faster search
+let badWords = new Set();
+function loadBadWords() {
+	const filePath = path.join(__dirname, '../bad-words.txt');
+	try {
+		const data = fs.readFileSync(filePath, 'utf8');
+		badWords = new Set(data.split(/\r?\n/));
+	} catch (err) {
+		console.error('Error while reading bad words file:', err);
+	}
+}
+
+loadBadWords();
+
+function checkifBadWord(content) {
+	console.log('Checking if the words in the post are in the dictionary of bad words');
+	const words = content.split(/\s+/); // Split content of the post into words
+	console.log('words in the content: ', words);
+	let found = false;
+
+	for (const word of words) {
+		if (badWords.has(word.toLowerCase())) {
+			console.log('The word', word, 'is a bad word');
+			found = true;
+		} else {
+			console.log('The word', word, 'is not a bad word');
+		}
+	}
+	return found;
+}
+
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
 		const { uid } = data;
 		const { tid } = data;
+		console.log('this is the file responsible for creating a post');
 		const content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
@@ -27,13 +62,20 @@ module.exports = function (Posts) {
 		if (data.toPid) {
 			await checkToPid(data.toPid, uid);
 		}
+		console.log('content before censoring bad words: ', content);
+		if (checkifBadWord(content)) {
+			data.content = '****'; // Use the censoring function to replace bad words with asterisks
+		} else { // if the content does not contain bad words, then leave it as it is
+			data.content = content;
+		}
+		console.log('content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
 			pid: pid,
 			uid: uid,
 			tid: tid,
-			content: content,
+			content: data.content,
 			timestamp: timestamp,
 		};
 

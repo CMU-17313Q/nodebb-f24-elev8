@@ -63,7 +63,7 @@ module.exports = function (Posts) {
 			await checkToPid(data.toPid, uid);
 		}
 		console.log('Content before censoring bad words: ', content);
-		data.content = censorBadWords(content);  // Replace bad words with asterisks in the content
+		data.content = censorBadWords(content);  // Only replace bad words, leave the rest intact
 		console.log('Content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');

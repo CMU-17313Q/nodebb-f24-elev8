@@ -27,7 +27,7 @@ function loadBadWords() {
 }
 
 loadBadWords();
-
+/*
 function checkifBadWord(content) {
 	console.log('Checking if the words in the post are in the dictionary of bad words');
 	const words = content.split(/\s+/); // Split content of the post into words
@@ -44,14 +44,15 @@ function checkifBadWord(content) {
 	}
 	return found;
 }
-
+*/
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
 		const { uid } = data;
 		const { tid } = data;
 		console.log('this is the file responsible for creating a post');
-		const content = data.content.toString();
+		// eslint-disable-next-line prefer-const
+		let content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
 
@@ -62,13 +63,9 @@ module.exports = function (Posts) {
 		if (data.toPid) {
 			await checkToPid(data.toPid, uid);
 		}
-		console.log('content before censoring bad words: ', content);
-		if (checkifBadWord(content)) {
-			data.content = '****'; // Use the censoring function to replace bad words with asterisks
-		} else { // if the content does not contain bad words, then leave it as it is
-			data.content = content;
-		}
-		console.log('content after censoring bad words: ', data.content);
+		console.log('Content before censoring bad words: ', content);
+		data.content = censorBadWords(content);// Only replace bad words, leave the rest intact
+		console.log('Content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
@@ -132,5 +129,21 @@ module.exports = function (Posts) {
 		if (!toPidExists || (toPost.deleted && !canViewToPid)) {
 			throw new Error('[[error:invalid-pid]]');
 		}
+	}
+	function censorBadWords(content) {
+		console.log('Checking if the words in the post are in the dictionary of bad words');
+		let censoredContent = '';
+		const words = content.split(/\s+/);// Split content into individual words
+		for (const word of words) {
+			const cleanWord = word.replace(/[^\w\s]/gi, '');// Remove special characters before checking
+			if (badWords.has(cleanWord.toLowerCase())) {
+				// Replace bad word with asterisks matching its length
+				const asterisks = '*'.repeat(cleanWord.length);
+				censoredContent += `${asterisks} `;
+			} else {
+				censoredContent += `${word} `;// Add the original word if it's not a bad word
+			}
+		}
+		return censoredContent.trim();
 	}
 };

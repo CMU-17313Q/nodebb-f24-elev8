@@ -12,6 +12,24 @@ const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
 
+// Add event listener for form submission
+document.getElementById('postForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const postContent = document.getElementById('postContent').value;
+    let anonymousFlag = false;
+
+    if (postContent.substring(0, 4).toLowerCase() === 'anon') {
+        anonymousFlag = true;
+    }
+
+    // Now you can use the anonymousFlag as needed
+    console.log('Anonymous Flag:', anonymousFlag);
+    console.log('Post Content:', postContent);
+
+    // Further processing to save the post content and anonymous flag
+});
+
 // to read the txt file containing bad words
 
 // using a set to store bad words for faster search

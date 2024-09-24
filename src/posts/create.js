@@ -11,23 +11,23 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
-
+const document  = require("../../node_modules/nodebb-plugin-composer-default/static/lib/composer");
 // Add event listener for form submission
-document.getElementById('postForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const postContent = document.getElementById('postContent').value;
-    let anonymousFlag = false;
+document.getElementById('#anonymous-checkbox').addEventListener('submit', (event) => {
+	event.preventDefault();
 
-    if (postContent.substring(0, 4).toLowerCase() === 'anon') {
-        anonymousFlag = true;
-    }
+	const postContent = document.getElementById('postContent').value;
+	let anonymousFlag = false;
 
-    // Now you can use the anonymousFlag as needed
-    console.log('Anonymous Flag:', anonymousFlag);
-    console.log('Post Content:', postContent);
+	if (postContent.substring(0, 4).toLowerCase() === 'anon') {
+		anonymousFlag = true;
+	}
 
-    // Further processing to save the post content and anonymous flag
+	// Now you can use the anonymousFlag as needed
+	console.log('Anonymous Flag:', anonymousFlag);
+	console.log('Post Content:', postContent);
+
+	// Further processing to save the post content and anonymous flag
 });
 
 // to read the txt file containing bad words

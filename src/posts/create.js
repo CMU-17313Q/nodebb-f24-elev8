@@ -48,13 +48,17 @@ function checkifBadWord(content) {
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
-		const { uid } = data;
+		let { uid } = data;
 		const { tid } = data;
 		console.log('this is the file responsible for creating a post');
 		// eslint-disable-next-line prefer-const
 		let content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
+
+		if (data.isAnonymous === true) {
+			uid = 0;
+		}
 
 		if (!uid && parseInt(uid, 10) !== 0) {
 			throw new Error('[[error:invalid-uid]]');

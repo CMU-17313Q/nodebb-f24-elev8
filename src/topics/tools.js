@@ -65,7 +65,6 @@ module.exports = function (Topics) {
 
 	function validatePermissions(data) {
 		if ((!data.canDelete && data.isDelete) || (!data.canRestore && !data.isDelete)) {
-			console.log('Ashwaq: Refactored code executed');
 			throw new Error('[[error:no-privileges]]');
 		}
 		if (data.topicData.deleted && data.isDelete) {

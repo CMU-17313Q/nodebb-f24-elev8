@@ -67,18 +67,18 @@ module.exports = function (Topics) {
 			post.user = users[post.uid];
 			post.timestampISO = utils.toISOString(post.timestamp);
 			tidToPost[post.tid] = post;
-			
-			if (post.anon === 'true'){
+
+			if (post.anon === 'true') {
 				post.user = structuredClone(post.user);
-				post.user.username = "Anonymous";
-				post.user.userslug = "Anonymous";
+				post.user.username = 'Anonymous';
+				post.user.userslug = 'Anonymous';
 				post.user.uid = -1;
-				post.user.displayname = "Anonymous";
+				post.user.displayname = 'Anonymous';
 				post.user['icon:text'] = '*';
 				post.user['icon:bgColor'] = '#aaaaaa';
 			}
-			
 		});
+
 		await Promise.all(postData.map(p => posts.parsePost(p)));
 
 		const { tags } = await plugins.hooks.fire('filter:teasers.configureStripTags', {

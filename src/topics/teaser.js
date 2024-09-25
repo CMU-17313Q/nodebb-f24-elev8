@@ -68,7 +68,6 @@ module.exports = function (Topics) {
 			post.timestampISO = utils.toISOString(post.timestamp);
 			tidToPost[post.tid] = post;
 
-			console.log(post);
 			if (post.anon === 'true'){
 				post.user = structuredClone(post.user);
 				post.user.username = "Anonymous";

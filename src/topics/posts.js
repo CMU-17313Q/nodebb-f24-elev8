@@ -154,8 +154,8 @@ module.exports = function (Topics) {
 					postObj.user.displayname = 'Anonymous';
 					postObj.user.userslug = 'Anonymous';
 					postObj.user.status = 'away';
-					postcount = 0,
-					topiccount =  0,
+					postObj.user.postcount = 0,
+					postObj.user.topiccount =  0,
 				}
 				console.log(postObj.user);
 			}

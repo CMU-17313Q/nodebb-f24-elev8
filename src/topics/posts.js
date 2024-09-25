@@ -148,7 +148,7 @@ module.exports = function (Topics) {
 				}
 				
 				if(postObj.anon === 'true'){
-					console.log("THIS POST SHOULD BE ANONYMOUS");
+					postObj.user.username = "Anonymous";
 				}
 
 			}

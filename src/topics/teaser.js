@@ -43,7 +43,7 @@ module.exports = function (Topics) {
 		});
 
 		const [allPostData, callerSettings] = await Promise.all([
-			posts.getPostsFields(teaserPids, ['pid', 'uid', 'timestamp', 'tid', 'content']),
+			posts.getPostsFields(teaserPids, ['pid', 'uid', 'timestamp', 'tid', 'content', 'anon']),
 			user.getSettings(uid),
 		]);
 		let postData = allPostData.filter(post => post && post.pid);
@@ -51,7 +51,7 @@ module.exports = function (Topics) {
 		postData = postData.filter(Boolean);
 		const uids = _.uniq(postData.map(post => post.uid));
 		const sortNewToOld = callerSettings.topicPostSort === 'newest_to_oldest';
-		const usersData = await user.getUsersFields(uids, ['uid', 'username', 'userslug', 'picture', 'anon']);
+		const usersData = await user.getUsersFields(uids, ['uid', 'username', 'userslug', 'picture']);
 
 		const users = {};
 		usersData.forEach((user) => {
@@ -67,7 +67,7 @@ module.exports = function (Topics) {
 			post.user = users[post.uid];
 			post.timestampISO = utils.toISOString(post.timestamp);
 			tidToPost[post.tid] = post;
-
+			
 			if (post.anon === 'true'){
 				post.user = structuredClone(post.user);
 				post.user.username = "Anonymous";

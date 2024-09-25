@@ -159,6 +159,7 @@ module.exports = function (Topics) {
 					postObj.user.topiccount =  0;
 					postObj.user.uid = -1;
 					postObj.user['icon:text'] = '*';
+					postObj.user['icon:bgColor'] = '#aaaaaa';
 				}
 			}
 		});

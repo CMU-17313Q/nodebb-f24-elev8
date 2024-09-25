@@ -52,7 +52,7 @@ module.exports = function (Posts) {
 		// This is an internal method, consider using Topics.reply instead
 		const { uid } = data;
 		const { tid } = data;
-		console.log('this is the file responsible for creating a post');
+		// console.log('this is the file responsible for creating a post');
 		// eslint-disable-next-line prefer-const
 		let content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
@@ -65,9 +65,9 @@ module.exports = function (Posts) {
 		if (data.toPid) {
 			await checkToPid(data.toPid, uid);
 		}
-		console.log('Content before censoring bad words: ', content);
+		// console.log('Content before censoring bad words: ', content);
 		data.content = censorBadWords(content);// Only replace bad words, leave the rest intact
-		console.log('Content after censoring bad words: ', data.content);
+		// console.log('Content after censoring bad words: ', data.content);
 
 		const pid = await db.incrObjectField('global', 'nextPid');
 		let postData = {
@@ -134,7 +134,7 @@ module.exports = function (Posts) {
 		}
 	}
 	function censorBadWords(content) {
-		console.log('Checking if the words in the post are in the dictionary of bad words');
+		// console.log('Checking if the words in the post are in the dictionary of bad words');
 		let censoredContent = '';
 		const words = content.split(/\s+/);// Split content into individual words
 		for (const word of words) {

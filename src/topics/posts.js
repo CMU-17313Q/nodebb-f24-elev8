@@ -149,6 +149,7 @@ module.exports = function (Topics) {
 				
 				if(postObj.anon === 'true'){
 					postObj.user.username = "Anonymous";
+					postObj.user.displayname = 'Anonymous';
 				}
 
 			}

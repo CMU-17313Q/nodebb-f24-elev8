@@ -149,7 +149,6 @@ module.exports = function (Topics) {
 				
 				
 				if(postObj.anon === 'true'){
-					console.log(postObj.user);
 					postObj.user = structuredClone(postObj.user);
 					postObj.user.username = "Anonymous";
 					postObj.user.displayname = 'Anonymous';

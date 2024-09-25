@@ -67,6 +67,8 @@ module.exports = function (Topics) {
 			post.user = users[post.uid];
 			post.timestampISO = utils.toISOString(post.timestamp);
 			tidToPost[post.tid] = post;
+
+			console.log(post.user);
 		});
 		await Promise.all(postData.map(p => posts.parsePost(p)));
 

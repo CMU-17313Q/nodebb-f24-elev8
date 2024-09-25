@@ -11,6 +11,8 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
+// const document = require('../../node_modules/nodebb-plugin-composer-default/static/lib/composer');
+// Add event listener for form submission
 
 // to read the txt file containing bad words
 

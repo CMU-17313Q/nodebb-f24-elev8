@@ -156,6 +156,7 @@ module.exports = function (Topics) {
 					postObj.user.status = 'away';
 					postObj.user.postcount = 0,
 					postObj.user.topiccount =  0,
+					postObj.user.uid = -1
 				}
 				console.log(postObj.user);
 			}

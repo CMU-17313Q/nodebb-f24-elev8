@@ -67,8 +67,12 @@ module.exports = function (Topics) {
 			post.user = users[post.uid];
 			post.timestampISO = utils.toISOString(post.timestamp);
 			tidToPost[post.tid] = post;
-
-			console.log(post.user);
+			
+			if (post.anon === 'true'){
+				post.user = structuredClone(post.user);
+				post.user.username = "Anonymous";
+			}
+			
 		});
 		await Promise.all(postData.map(p => posts.parsePost(p)));
 

@@ -149,16 +149,17 @@ module.exports = function (Topics) {
 				
 				
 				if(postObj.anon === 'true'){
+					console.log(postObj.user);
 					postObj.user = structuredClone(postObj.user);
 					postObj.user.username = "Anonymous";
 					postObj.user.displayname = 'Anonymous';
 					postObj.user.userslug = 'Anonymous';
 					postObj.user.status = 'away';
-					postObj.user.postcount = 0,
-					postObj.user.topiccount =  0,
-					postObj.user.uid = -1
+					postObj.user.postcount = 0;
+					postObj.user.topiccount =  0;
+					postObj.user.uid = -1;
+					postObj.user['icon:text'] = '*';
 				}
-				console.log(postObj.user);
 			}
 		});
 

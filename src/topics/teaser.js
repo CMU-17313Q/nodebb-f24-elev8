@@ -71,6 +71,8 @@ module.exports = function (Topics) {
 			if (post.anon === 'true'){
 				post.user = structuredClone(post.user);
 				post.user.username = "Anonymous";
+				post.user.userslug = "Anonymous";
+				post.user.uid = -1;
 			}
 			
 		});

@@ -74,6 +74,8 @@ module.exports = function (Topics) {
 				post.user.userslug = "Anonymous";
 				post.user.uid = -1;
 				post.user.displayname = "Anonymous";
+				post.user['icon:text'] = '*';
+				post.user['icon:bgColor'] = '#aaaaaa';
 			}
 			
 		});

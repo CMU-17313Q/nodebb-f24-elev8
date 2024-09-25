@@ -11,6 +11,7 @@ const posts = require('../posts');
 const meta = require('../meta');
 const plugins = require('../plugins');
 const utils = require('../utils');
+const { post } = require('jquery');
 
 const backlinkRegex = new RegExp(`(?:${nconf.get('url').replace('/', '\\/')}|\b|\\s)\\/topic\\/(\\d+)(?:\\/\\w+)?`, 'g');
 
@@ -146,7 +147,9 @@ module.exports = function (Topics) {
 					postObj.user.displayname = postObj.user.username;
 				}
 				
-				console.log(postObj);
+				if(postObj.anon === 'true'){
+					console.log("THIS POST SHOULD BE ANONYMOUS");
+				}
 
 			}
 		});

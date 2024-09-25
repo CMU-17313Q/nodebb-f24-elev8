@@ -73,6 +73,7 @@ module.exports = function (Topics) {
 				post.user.username = "Anonymous";
 				post.user.userslug = "Anonymous";
 				post.user.uid = -1;
+				post.user.displayname = "Anonymous";
 			}
 			
 		});

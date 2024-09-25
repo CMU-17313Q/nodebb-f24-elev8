@@ -10,14 +10,11 @@ const plugins = require('../plugins');
 const privileges = require('../privileges');
 const utils = require('../utils');
 
-console.log('Ashwaq');
-
 module.exports = function (Topics) {
 	const topicTools = {};
 	Topics.tools = topicTools;
 
 	topicTools.delete = async function (tid, uid) {
-		console.log('Ashwaq: Refactored code executed');
 		return await toggleDelete(tid, uid, true);
 	};
 

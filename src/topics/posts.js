@@ -153,6 +153,7 @@ module.exports = function (Topics) {
 					postObj.user.username = "Anonymous";
 					postObj.user.displayname = 'Anonymous';
 					postObj.user.userslug = 'Anonymous';
+					postObj.user.status = 'away';
 				}
 				console.log(postObj.user);
 			}

@@ -48,7 +48,7 @@ function checkifBadWord(content) {
 module.exports = function (Posts) {
 	Posts.create = async function (data) {
 		// This is an internal method, consider using Topics.reply instead
-		let { uid } = data;
+		const { uid } = data;
 		const { tid } = data;
 		console.log('this is the file responsible for creating a post');
 		// eslint-disable-next-line prefer-const

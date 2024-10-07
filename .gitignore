@@ -2,6 +2,10 @@ dist/
 yarn.lock
 npm-debug.log
 node_modules/*
+node_modules/**/*
+!node_modules/nodebb-theme-persona/
+!node_modules/nodebb-theme-persona/templates/
+!node_modules/nodebb-theme-persona/templates/topic.tpl
 !node_modules/nodebb-plugin-composer-default/
 sftp-config.json  
 config.json

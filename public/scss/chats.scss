@@ -125,20 +125,3 @@ body.page-user-chats {
 		display: none!important;
 	}
 }
-.emoji-reactions {
-    background-color: yellow; /* Just to test if it appears */
-    border: 1px solid red;
-    display: block;
-    padding: 10px;
-}
-
-.emoji-reactions .reaction {
-    background: none !important;
-    border: none !important;
-    cursor: pointer !important;
-    font-size: 1.2em !important;
-}
-
-.emoji-reactions .reaction i {
-    font-size: 1.5em !important;  /* Larger icons if needed */
-}

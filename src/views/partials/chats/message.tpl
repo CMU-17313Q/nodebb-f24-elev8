@@ -54,6 +54,7 @@
 						const countSpan = this.querySelector('.count');
 						countSpan.textContent = parseInt(countSpan.textContent) + 1;
 					} else {
+						console.log("it is not working);
 						alert('Failed to add reaction.');
 					}
 				} catch (error) {

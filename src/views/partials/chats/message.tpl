@@ -37,6 +37,7 @@
 		<script>
 		document.querySelectorAll('.emoji-btn').forEach(button => {
 			button.addEventListener('click', async function() {
+				console.log("it is not working);
 				const reaction = this.getAttribute('data-reaction');
 				const pid = this.closest('[data-pid]').getAttribute('data-pid');
 				const uid = app.user.uid;

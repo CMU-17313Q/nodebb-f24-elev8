@@ -228,3 +228,9 @@ body.page-user-chats {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+.reaction-box .count {
+    font-family: 'Roboto', sans-serif; /* Use a custom font */
+    font-weight: 700; /* Bold count */
+    color: #4CAF50; /* Make the count green */
+}

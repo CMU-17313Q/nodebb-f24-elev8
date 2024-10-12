@@ -32,6 +32,25 @@
 			<button class="emoji-btn" data-reaction="😂">
 				<span class="emoji">😂</span> <span class="count">0</span>
 			</button>
+
+			<button class="emoji-btn" data-reaction="😮">
+				<span class="emoji">😮</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😢">
+				<span class="emoji">😢</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👏">
+				<span class="emoji">👏</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🎉">
+				<span class="emoji">🎉</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🔥">
+				<span class="emoji">🔥</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="💯">
+				<span class="emoji">💯</span> <span class="count">0</span>
+			</button>
 		</div>
 
 		<!-- Existing controls and reply button -->

@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const posts = require('../posts');  // Import the posts module
 const reactions = require('../reactions');  // Assuming you have a reactions module
-const middleware = require('../middleware'); // Adjust the path as necessary
 
 // Add reaction to a post
-router.post('/post/:pid/reaction', middleware.ensureLoggedIn, async (req, res) => {
+router.post('/post/:pid/reaction', async (req, res) => {
     try {
         const { pid } = req.params;
         const { uid, emoji } = req.body;
@@ -19,7 +17,7 @@ router.post('/post/:pid/reaction', middleware.ensureLoggedIn, async (req, res) =
 });
 
 // Remove reaction from a post
-router.delete('/post/:pid/reaction', middleware.ensureLoggedIn, async (req, res) => {
+router.delete('/post/:pid/reaction', async (req, res) => {
     try {
         const { pid } = req.params;
         const { uid, emoji } = req.body;
@@ -33,4 +31,3 @@ router.delete('/post/:pid/reaction', middleware.ensureLoggedIn, async (req, res)
 });
 
 module.exports = router;
-

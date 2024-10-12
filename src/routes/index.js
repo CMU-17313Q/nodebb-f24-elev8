@@ -16,6 +16,9 @@ const helpers = require('./helpers');
 
 const { setupPageRoute } = helpers;
 
+const reactionsRoutes = require('./routes/reactions');
+app.use('/api', reactionsRoutes);
+
 const _mounts = {
 	user: require('./user'),
 	meta: require('./meta'),

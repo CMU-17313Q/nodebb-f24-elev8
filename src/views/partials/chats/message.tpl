@@ -22,14 +22,14 @@
 			{messages.content}
 		</div>
 		<!-- Emoji Reaction Buttons -->
-		<div class="chat-message-reactions">
-			<button class="reaction" data-reaction="👍">
+		<div class="reaction-box">
+			<button class="emoji-btn" data-reaction="👍">
 				<span class="emoji">👍</span> <span class="count">0</span>
 			</button>
-			<button class="reaction" data-reaction="❤️">
+			<button class="emoji-btn" data-reaction="❤️">
 				<span class="emoji">❤️</span> <span class="count">0</span>
 			</button>
-			<button class="reaction" data-reaction="😂">
+			<button class="emoji-btn" data-reaction="😂">
 				<span class="emoji">😂</span> <span class="count">0</span>
 			</button>
 		</div>

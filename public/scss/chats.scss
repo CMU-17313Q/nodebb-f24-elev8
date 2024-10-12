@@ -125,41 +125,56 @@ body.page-user-chats {
 		display: none!important;
 	}
 }
-.chat-message-reactions {
+/* Styling for the reaction container */
+.reaction-box {
     display: flex;
-    flex-wrap: wrap;
     gap: 8px; /* Increased gap for spacing between emojis */
     margin-top: 10px; /* Adjusted the margin to provide more spacing from the message */
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 15px; /* Rounded corners for the container */
+    padding: 10px; /* Padding for the emoji box */
+    background-color: #f9f9f9; /* Light background color */
 }
 
-.chat-message-reactions .reaction {
-    background-color: #f0f0f0; /* Lighter background color */
-    border-radius: 15px; /* More rounded corners */
-    padding: 4px 12px; /* Increased padding to make the box larger */
+/* Styling for each emoji button */
+.emoji-btn {
+    background-color: #f0f0f0; /* Lighter background color for buttons */
+    border: 2px solid #28a745; /* Green border around each emoji button */
+    border-radius: 15px; /* Rounded corners for the buttons */
+    padding: 4px 12px; /* Padding to make the buttons larger */
     cursor: pointer;
-    font-size: 16px; /* Slightly larger font for emoji text */
+    font-size: 16px; /* Slightly larger font for the emoji text */
     display: flex;
     align-items: center;
     gap: 6px; /* Increased space between emoji and count */
 }
 
-.chat-message-reactions .reaction:hover {
-    background-color: #d9d9d9; /* Different hover color */
+.emoji-btn:hover {
+    background-color: #d9d9d9; /* Hover color for the emoji button */
 }
 
-.chat-message-reactions .reaction.user-reacted {
+.emoji-btn .emoji {
+    margin-right: 6px; /* Adjusted space between emoji and count */
+}
+
+/* Additional styling for the emoji reaction count */
+.emoji-btn .count {
+    font-weight: bold;
+    font-size: 14px; /* Adjust the count size */
+}
+
+/* Subtle effect when a user has reacted */
+.emoji-btn.user-reacted {
     background-color: #c9f0c9; /* Subtle color change for reacted emojis */
 }
 
-.chat-message-reactions .emoji {
-    margin-right: 6px; /* Adjusted space between emoji and number */
-}
-
+/* Styling for the message wrapper */
 .message-body-wrapper {
     position: relative;
     padding-bottom: 20px; /* Extra padding for better spacing */
 }
 
+/* Styling for message reactions count bubble */
 .message-reactions-count {
     position: absolute;
     right: 0;
@@ -176,13 +191,8 @@ body.page-user-chats {
     align-items: center;
 }
 
-.reaction-count {
-    font-weight: bold;
-    font-size: 14px; /* Adjust the count size */
-}
-
 .reaction-message {
-    background-color: #eeeeee;
+    background-color: #827c7c;
     font-style: italic;
     padding: 8px; /* Increased padding */
     border-radius: 10px; /* More rounded edges */

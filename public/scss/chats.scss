@@ -128,60 +128,62 @@ body.page-user-chats {
 .chat-message-reactions {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 5px;
+    gap: 8px; /* Increased gap for spacing between emojis */
+    margin-top: 10px; /* Adjusted the margin to provide more spacing from the message */
 }
 
 .chat-message-reactions .reaction {
-    background-color: #e9ecef;
-    border-radius: 12px;
-    padding: 2px 8px;
+    background-color: #f0f0f0; /* Lighter background color */
+    border-radius: 15px; /* More rounded corners */
+    padding: 4px 12px; /* Increased padding to make the box larger */
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px; /* Slightly larger font for emoji text */
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px; /* Increased space between emoji and count */
 }
 
 .chat-message-reactions .reaction:hover {
-    background-color: #ced4da;
+    background-color: #d9d9d9; /* Different hover color */
 }
 
 .chat-message-reactions .reaction.user-reacted {
-    background-color: #d1e7dd;
+    background-color: #c9f0c9; /* Subtle color change for reacted emojis */
 }
 
 .chat-message-reactions .emoji {
-    margin-right: 4px;
+    margin-right: 6px; /* Adjusted space between emoji and number */
 }
 
 .message-body-wrapper {
     position: relative;
+    padding-bottom: 20px; /* Extra padding for better spacing */
 }
 
 .message-reactions-count {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin-right: 0.5rem;
-    margin-bottom: 0.25rem;
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
 
 .reactions-bubble {
-    background-color: #e9ecef;
-    border-radius: 50%;
-    padding: 4px 8px;
+    background-color: #f7f7f7; /* Subtle background for the bubble */
+    border-radius: 20px; /* Rounded bubble shape */
+    padding: 6px 10px; /* Adjusted padding */
     display: flex;
     align-items: center;
 }
 
 .reaction-count {
     font-weight: bold;
+    font-size: 14px; /* Adjust the count size */
 }
 
 .reaction-message {
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
     font-style: italic;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px; /* Increased padding */
+    border-radius: 10px; /* More rounded edges */
 }

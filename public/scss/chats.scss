@@ -209,3 +209,22 @@ body.page-user-chats {
 .emoji-btn:active {
     transform: scale(0.9); /* Compresses slightly on click */
 }
+
+.emoji-btn .count {
+    font-weight: bold;
+}
+
+.emoji-btn[data-count="10"] {
+    background-color: #ffeb3b; /* Highlight popular reactions */
+}
+
+.emoji-btn[data-count="50"] {
+    background-color: #ff5722;
+    animation: pulse 1s infinite; /* Adds a pulse effect */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

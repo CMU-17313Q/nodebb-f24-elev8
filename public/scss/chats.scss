@@ -125,3 +125,63 @@ body.page-user-chats {
 		display: none!important;
 	}
 }
+.chat-message-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.chat-message-reactions .reaction {
+    background-color: #e9ecef;
+    border-radius: 12px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.chat-message-reactions .reaction:hover {
+    background-color: #ced4da;
+}
+
+.chat-message-reactions .reaction.user-reacted {
+    background-color: #d1e7dd;
+}
+
+.chat-message-reactions .emoji {
+    margin-right: 4px;
+}
+
+.message-body-wrapper {
+    position: relative;
+}
+
+.message-reactions-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.reactions-bubble {
+    background-color: #e9ecef;
+    border-radius: 50%;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.reaction-count {
+    font-weight: bold;
+}
+
+.reaction-message {
+    background-color: #f1f1f1;
+    font-style: italic;
+    padding: 5px;
+    border-radius: 5px;
+}

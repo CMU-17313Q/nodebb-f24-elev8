@@ -16,6 +16,8 @@ const helpers = require('./helpers');
 
 const { setupPageRoute } = helpers;
 
+
+
 const _mounts = {
 	user: require('./user'),
 	meta: require('./meta'),
@@ -36,7 +38,8 @@ _mounts.main = (app, middleware, controllers) => {
 	setupPageRoute(app, '/search', [], controllers.search.search);
 	setupPageRoute(app, '/reset/:code?', [middleware.delayLoading], controllers.reset);
 	setupPageRoute(app, '/tos', [], controllers.termsOfUse);
-
+	app.post('/api/post/:pid/reaction', middleware.ensureLoggedIn, controllers.reactions.addReaction);
+	app.delete('/api/post/:pid/reaction', middleware.ensureLoggedIn, controllers.reactions.removeReaction);
 	setupPageRoute(app, '/email/unsubscribe/:token', [], controllers.accounts.settings.unsubscribe);
 	app.post('/email/unsubscribe/:token', controllers.accounts.settings.unsubscribePost);
 
@@ -146,13 +149,13 @@ module.exports = async function (app, middleware) {
 	await writeRoutes.reload({ router: router });
 	addCoreRoutes(app, router, middleware, mounts);
 
+	
 	winston.info('[router] Routes added');
 };
 
 function addCoreRoutes(app, router, middleware, mounts) {
 	_mounts.meta(router, middleware, controllers);
 	_mounts.api(router, middleware, controllers);
-	//app.post('/api/post/:pid/reaction', middleware.ensureLoggedIn, controllers.posts.reactToPost);
 	_mounts.feed(router, middleware, controllers);
 
 	_mounts.main(router, middleware, controllers);

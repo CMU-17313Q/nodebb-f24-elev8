@@ -34,38 +34,55 @@
 			</button>
 		</div>
 
-		<script>
-		document.querySelectorAll('.emoji-btn').forEach(button => {
-			button.addEventListener('click', async function() {
-				console.log("it is not working);
-				const reaction = this.getAttribute('data-reaction');
-				const pid = this.closest('[data-pid]').getAttribute('data-pid');
-				const uid = app.user.uid;
+  <script>
+    document.querySelectorAll('.emoji-btn').forEach(button => {
+        button.addEventListener('click', async function() {
+            const reaction = this.getAttribute('data-reaction');
+            const pid = this.closest('[data-pid]').getAttribute('data-pid');
+            const uid = app.user.uid;
 
-				try {
-					const response = await fetch(`/api/post/${pid}/reaction`, {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						body: JSON.stringify({ uid, emoji: reaction })
-					});
-					const result = await response.json();
-					if (result.success) {
-						const countSpan = this.querySelector('.count');
-						countSpan.textContent = parseInt(countSpan.textContent) + 1;
-					} else {
-						console.log("it is not working);
-						alert('Failed to add reaction.');
-					}
-				} catch (error) {
-					console.error('Error:', error);
-					alert('An error occurred while adding the reaction.');
-				}
-			});
-		});
-		</script>
+            try {
+                const response = await fetch(`/api/post/${pid}/reaction`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ uid, emoji: reaction })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    const countSpan = this.querySelector('.count');
+                    countSpan.textContent = parseInt(countSpan.textContent) + 1;
+                } else {
+                    alert('Failed to add reaction.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while adding the reaction.');
+            }
+        });
+    });
 
+    // Real-time updates
+    const socket = io();
+    socket.on('reaction:add', function(data) {
+        const { pid, emoji } = data;
+        const button = document.querySelector(`[data-pid="${pid}"] .emoji-btn[data-reaction="${emoji}"]`);
+        if (button) {
+            const countSpan = button.querySelector('.count');
+            countSpan.textContent = parseInt(countSpan.textContent) + 1;
+        }
+    });
+
+    socket.on('reaction:remove', function(data) {
+        const { pid, emoji } = data;
+        const button = document.querySelector(`[data-pid="${pid}"] .emoji-btn[data-reaction="${emoji}"]`);
+        if (button) {
+            const countSpan = button.querySelector('.count');
+            countSpan.textContent = parseInt(countSpan.textContent) - 1;
+        }
+    });
+    </script>
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">
 			<div class="btn-group border shadow-sm controls position-absolute bg-body end-0" style="bottom:1rem;">

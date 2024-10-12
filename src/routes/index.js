@@ -152,6 +152,7 @@ module.exports = async function (app, middleware) {
 function addCoreRoutes(app, router, middleware, mounts) {
 	_mounts.meta(router, middleware, controllers);
 	_mounts.api(router, middleware, controllers);
+	app.post('/api/post/:pid/reaction', middleware.ensureLoggedIn, controllers.posts.reactToPost);
 	_mounts.feed(router, middleware, controllers);
 
 	_mounts.main(router, middleware, controllers);
@@ -197,6 +198,7 @@ function addCoreRoutes(app, router, middleware, mounts) {
 	app.use(controllers['404'].handle404);
 	app.use(controllers.errors.handleURIErrors);
 	app.use(controllers.errors.handleErrors);
+	
 }
 
 function addRemountableRoutes(app, router, middleware, mounts) {

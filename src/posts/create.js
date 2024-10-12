@@ -110,6 +110,7 @@ module.exports = function (Posts) {
 		return result.post;
 	};
 
+
 	async function addReplyTo(postData, timestamp) {
 		if (!postData.toPid) {
 			return;
@@ -147,3 +148,5 @@ module.exports = function (Posts) {
 		return censoredContent.trim();
 	}
 };
+
+

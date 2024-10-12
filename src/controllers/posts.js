@@ -38,4 +38,3 @@ postsController.getRecentPosts = async function (req, res) {
     const data = await posts.getRecentPosts(req.uid, start, stop, req.params.term);
     res.json(data);
 };
-

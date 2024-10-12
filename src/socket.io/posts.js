@@ -28,40 +28,6 @@ SocketPosts.getRawPost = async function (socket, pid) {
 	return await api.posts.getRaw(socket, { pid });
 };
 
-// Example method to handle adding an emoji reaction
-SocketPosts.addEmojiReaction = async function (socket, data) {
-    const { pid, uid, emoji } = data;
-    const validEmojis = ['👍', '❤️', '😂']; // emojis allowed
-    if (!validEmojis.includes(emoji)) {
-        throw new Error('[[error:invalid-emoji]]');
-    }
-
-    const canReact = await privileges.posts.canPostReaction(pid, uid);
-    if (!canReact) {
-        throw new Error('[[error:no-privileges]]');
-    }
-
-    await posts.addReaction(pid, uid, emoji);
-    return { success: true };
-};
-
-// Example method to handle removing an emoji reaction
-SocketPosts.removeEmojiReaction = async function (socket, data) {
-    const { pid, uid, emoji } = data;
-    const validEmojis = ['👍', '❤️', '😂'];
-    if (!validEmojis.includes(emoji)) {
-        throw new Error('[[error:invalid-emoji]]');
-    }
-
-    const canReact = await privileges.posts.canPostReaction(pid, uid);
-    if (!canReact) {
-        throw new Error('[[error:no-privileges]]');
-    }
-
-    await posts.removeReaction(pid, uid, emoji);
-    return { success: true };
-};
-
 SocketPosts.getPostSummaryByIndex = async function (socket, data) {
 	sockets.warnDeprecated(socket, 'GET /api/v3/posts/byIndex/:index/summary?tid=:tid');
 

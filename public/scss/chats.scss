@@ -197,3 +197,15 @@ body.page-user-chats {
     padding: 8px; /* Increased padding */
     border-radius: 10px; /* More rounded edges */
 }
+
+.emoji-btn {
+    transition: transform 0.2s ease-in-out;
+}
+
+.emoji-btn:hover {
+    transform: scale(1.2); /* Slightly enlarges the button */
+}
+
+.emoji-btn:active {
+    transform: scale(0.9); /* Compresses slightly on click */
+}

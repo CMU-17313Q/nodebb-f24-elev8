@@ -839,3 +839,4 @@ define('forum/chats', [
 
 	return Chats;
 });
+

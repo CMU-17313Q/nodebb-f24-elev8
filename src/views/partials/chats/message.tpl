@@ -51,6 +51,247 @@
 			<button class="emoji-btn" data-reaction="💯">
 				<span class="emoji">💯</span> <span class="count">0</span>
 			</button>
+			<button class="emoji-btn" data-reaction="😢">
+    			<span class="emoji">😢</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👏">
+    			<span class="emoji">👏</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😀">
+    			<span class="emoji">😀</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😃">
+    			<span class="emoji">😃</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😄">
+    			<span class="emoji">😄</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😁">
+    			<span class="emoji">😁</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😆">
+    			<span class="emoji">😆</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😅">
+				<span class="emoji">😅</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤣">
+				<span class="emoji">🤣</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😊">
+				<span class="emoji">😊</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😇">
+				<span class="emoji">😇</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🙂">
+				<span class="emoji">🙂</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🙃">
+				<span class="emoji">🙃</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😉">
+				<span class="emoji">😉</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😌">
+				<span class="emoji">😌</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😍">
+				<span class="emoji">😍</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😘">
+				<span class="emoji">😘</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😗">
+				<span class="emoji">😗</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😙">
+				<span class="emoji">😙</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😚">
+				<span class="emoji">😚</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😋">
+				<span class="emoji">😋</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😛">
+				<span class="emoji">😛</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😜">
+				<span class="emoji">😜</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤪">
+				<span class="emoji">🤪</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😝">
+				<span class="emoji">😝</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤑">
+				<span class="emoji">🤑</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤗">
+				<span class="emoji">🤗</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤭">
+				<span class="emoji">🤭</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤫">
+				<span class="emoji">🤫</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤔">
+				<span class="emoji">🤔</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤐">
+				<span class="emoji">🤐</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤨">
+				<span class="emoji">🤨</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😐">
+				<span class="emoji">😐</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😑">
+				<span class="emoji">😑</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😶">
+				<span class="emoji">😶</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😏">
+				<span class="emoji">😏</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😒">
+				<span class="emoji">😒</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🙄">
+				<span class="emoji">🙄</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😬">
+				<span class="emoji">😬</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤥">
+				<span class="emoji">🤥</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😌">
+				<span class="emoji">😌</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😔">
+				<span class="emoji">😔</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😪">
+				<span class="emoji">😪</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤤">
+				<span class="emoji">🤤</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😴">
+				<span class="emoji">😴</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😷">
+				<span class="emoji">😷</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤒">
+				<span class="emoji">🤒</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤕">
+				<span class="emoji">🤕</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤢">
+				<span class="emoji">🤢</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤮">
+				<span class="emoji">🤮</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤧">
+				<span class="emoji">🤧</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😇">
+				<span class="emoji">😇</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥳">
+				<span class="emoji">🥳</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥺">
+				<span class="emoji">🥺</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤠">
+				<span class="emoji">🤠</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥴">
+				<span class="emoji">🥴</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥵">
+				<span class="emoji">🥵</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥶">
+				<span class="emoji">🥶</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🥱">
+				<span class="emoji">🥱</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😈">
+				<span class="emoji">😈</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👿">
+				<span class="emoji">👿</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👹">
+				<span class="emoji">👹</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👺">
+				<span class="emoji">👺</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="💀">
+				<span class="emoji">💀</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👻">
+				<span class="emoji">👻</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👽">
+				<span class="emoji">👽</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="👾">
+				<span class="emoji">👾</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🤖">
+				<span class="emoji">🤖</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🎃">
+				<span class="emoji">🎃</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😺">
+				<span class="emoji">😺</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😸">
+				<span class="emoji">😸</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😹">
+				<span class="emoji">😹</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😻">
+				<span class="emoji">😻</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😼">
+				<span class="emoji">😼</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😽">
+				<span class="emoji">😽</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="🙀">
+				<span class="emoji">🙀</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😿">
+				<span class="emoji">😿</span> <span class="count">0</span>
+			</button>
+			<button class="emoji-btn" data-reaction="😾">
+				<span class="emoji">😾</span> <span class="count">0</span>
+			</button>
+</div>
+
+<!-- Existing controls and reply button -->
+<div component="chat/message/controls" class="position-relative">
+    <div class="btn-group border shadow-sm controls position-absolute bg-body end-0" style="bottom:1rem;">
+        <!-- IMPORT partials/chats/add-reaction.tpl -->
+        <button class="btn btn-sm btn-link" data-action="reply" title="[[topic:reply]]"><i class="fa fa-reply"></i></button>
 		</div>
 
 		<!-- Existing controls and reply button -->

@@ -1,4 +1,28 @@
 // chats need a bit of css
+.reaction-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.emoji-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.emoji-btn .emoji {
+    font-size: 1.5em;
+}
+
+.emoji-btn .count {
+    font-size: 0.9em;
+    color: #555;
+}
+// added new till here
 
 .stacked-avatars {
 	width: 32px;
@@ -124,17 +148,46 @@ body.page-user-chats {
 	[component="chat/user/list/btn"], [component="chat/pinned/messages/btn"] {
 		display: none!important;
 	}
+right: 2rem;
+width: auto!important;
+height: auto!important;
+[component="chat/user/list/btn"], [component="chat/pinned/messages/btn"] {
+	display: none!important;
 }
+}
+// started from hereeee
 /* Styling for the reaction container */
 .reaction-box {
     display: flex;
-    gap: 8px; /* Increased gap for spacing between emojis */
-    margin-top: 10px; /* Adjusted the margin to provide more spacing from the message */
-    border: 2px solid #28a745; /* Green border */
-    border-radius: 15px; /* Rounded corners for the container */
-    padding: 10px; /* Padding for the emoji box */
+    flex-wrap: wrap; /* Allow emojis to wrap to the next line */
+    gap: 8px; /* Space between emojis */
+    margin-top: 10px; /* Space above the reaction box */
+    padding: 10px; /* Padding inside the reaction box */
     background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 100%; /* Ensure the container does not exceed the width of the parent */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow-y: visible; /* Allow vertical scrolling if needed */
 }
+
+.emoji-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.emoji-btn .emoji {
+    font-size: 1.5em;
+}
+
+.emoji-btn .count {
+    font-size: 0.9em;
+    color: #555;
+} // added till hereeee
 
 /* Styling for each emoji button */
 .emoji-btn {

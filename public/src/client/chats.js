@@ -62,6 +62,12 @@ define('forum/chats', [
 		recentChats.init();
 
 		Chats.addEventListeners();
+
+		const button = document.querySelector(".emoji-btn");
+		button.addEventListener("click", () => {
+			console.log("Emoji button clicked");
+		});
+		
 		Chats.setActive(ajaxify.data.roomId);
 
 		if (env === 'md' || env === 'lg' || env === 'xl' || env === 'xxl') {

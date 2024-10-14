@@ -61,7 +61,7 @@ define('forum/chats', [
 
 		recentChats.init();
 		Chats.addEventListeners();
-		
+
 		Chats.setActive(ajaxify.data.roomId);
 
 		if (env === 'md' || env === 'lg' || env === 'xl' || env === 'xxl') {

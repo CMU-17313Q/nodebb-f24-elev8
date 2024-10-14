@@ -1,5 +1,4 @@
-
-// will add a reaction to a post with the given pid
+// will add a reaction to a message in the given roomId
 'use strict';
 
 const reactions = require('../reactions');
@@ -9,8 +8,8 @@ const reactionsController = module.exports;
 
 reactionsController.addReaction = async function (req, res) {
     try {
-        const { pid, uid, emoji } = req.body;
-        await reactions.addReaction(pid, uid, emoji);
+        const { roomId, uid, emoji } = req.body;
+        await reactions.addReaction(roomId, uid, emoji);
         res.json({ success: true });
     } catch (error) {
         console.error('Error adding reaction:', error);
@@ -20,8 +19,8 @@ reactionsController.addReaction = async function (req, res) {
 
 reactionsController.removeReaction = async function (req, res) {
     try {
-        const { pid, uid, emoji } = req.body;
-        await reactions.removeReaction(pid, uid, emoji);
+        const { roomId, uid, emoji } = req.body;
+        await reactions.removeReaction(roomId, uid, emoji);
         res.json({ success: true });
     } catch (error) {
         console.error('Error removing reaction:', error);
@@ -31,8 +30,8 @@ reactionsController.removeReaction = async function (req, res) {
 
 reactionsController.getReactions = async function (req, res) {
     try {
-        const { pid } = req.params;
-        const reactionsData = await reactions.getReactions(pid);
+        const { roomId } = req.params;
+        const reactionsData = await reactions.getReactions(roomId);
         res.json(reactionsData);
     } catch (error) {
         console.error('Error getting reactions:', error);

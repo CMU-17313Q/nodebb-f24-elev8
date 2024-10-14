@@ -34,15 +34,15 @@
 			</button>
 		</div>
 
-  <script>
+<script>
     document.querySelectorAll('.emoji-btn').forEach(button => {
         button.addEventListener('click', async function() {
             const reaction = this.getAttribute('data-reaction');
-            const pid = this.closest('[data-pid]').getAttribute('data-pid');
+            const roomId = this.closest('[data-roomid]').getAttribute('data-roomid'); 
             const uid = app.user.uid;
 
             try {
-                const response = await fetch(`/api/post/${pid}/reaction`, {
+                const response = await fetch(`/api/chat/${roomId}/reaction`, { 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -66,8 +66,8 @@
     // Real-time updates
     const socket = io();
     socket.on('reaction:add', function(data) {
-        const { pid, emoji } = data;
-        const button = document.querySelector(`[data-pid="${pid}"] .emoji-btn[data-reaction="${emoji}"]`);
+        const { roomId, emoji } = data; // Change pid to roomId
+        const button = document.querySelector(`[data-roomid="${roomId}"] .emoji-btn[data-reaction="${emoji}"]`); 
         if (button) {
             const countSpan = button.querySelector('.count');
             countSpan.textContent = parseInt(countSpan.textContent) + 1;
@@ -75,14 +75,17 @@
     });
 
     socket.on('reaction:remove', function(data) {
-        const { pid, emoji } = data;
-        const button = document.querySelector(`[data-pid="${pid}"] .emoji-btn[data-reaction="${emoji}"]`);
+        const { roomId, emoji } = data; // Change pid to roomId
+        const button = document.querySelector(`[data-roomid="${roomId}"] .emoji-btn[data-reaction="${emoji}"]`); 
         if (button) {
             const countSpan = button.querySelector('.count');
             countSpan.textContent = parseInt(countSpan.textContent) - 1;
         }
     });
-    </script>
+</script>
+
+
+
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">
 			<div class="btn-group border shadow-sm controls position-absolute bg-body end-0" style="bottom:1rem;">

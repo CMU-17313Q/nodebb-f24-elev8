@@ -19,8 +19,8 @@ SocketPlugins.emojiReactions = {};
 // Method to handle adding a reaction
 SocketPlugins.emojiReactions.addReaction = async function(socket, data, callback) {
     try {
-        const { pid, uid, emoji } = data;
-        await require('../reactions').addReaction(pid, uid, emoji);
+        const { roomId, uid, emoji } = data;
+        await require('../reactions').addReaction(roomId, uid, emoji);
         callback(null, { success: true });
     } catch (err) {
         callback(err);
@@ -30,8 +30,8 @@ SocketPlugins.emojiReactions.addReaction = async function(socket, data, callback
 // Method to handle removing a reaction
 SocketPlugins.emojiReactions.removeReaction = async function(socket, data, callback) {
     try {
-        const { pid, uid, emoji } = data;
-        await require('../reactions').removeReaction(pid, uid, emoji);
+        const { roomId, uid, emoji } = data;
+        await require('../reactions').removeReaction(roomId, uid, emoji);
         callback(null, { success: true });
     } catch (err) {
         callback(err);

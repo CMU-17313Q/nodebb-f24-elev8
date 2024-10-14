@@ -66,7 +66,7 @@
     // Real-time updates
     const socket = io();
     socket.on('reaction:add', function(data) {
-        const { roomId, emoji } = data; // Change pid to roomId
+        const { roomId, emoji } = data; 
         const button = document.querySelector(`[data-roomid="${roomId}"] .emoji-btn[data-reaction="${emoji}"]`); 
         if (button) {
             const countSpan = button.querySelector('.count');
@@ -83,8 +83,6 @@
         }
     });
 </script>
-
-
 
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">

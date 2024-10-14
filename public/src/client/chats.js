@@ -60,13 +60,7 @@ define('forum/chats', [
 		}
 
 		recentChats.init();
-
 		Chats.addEventListeners();
-
-		const button = document.querySelector(".emoji-btn");
-		button.addEventListener("click", () => {
-			console.log("Emoji button clicked");
-		});
 		
 		Chats.setActive(ajaxify.data.roomId);
 
@@ -120,7 +114,19 @@ define('forum/chats', [
 			uploadFormEl: $('[component="chat/upload"]'),
 			uploadBtnEl: $('[component="chat/upload/button"]'),
 			inputEl: $('[component="chat/input"]'),
+
 		});
+
+		document.querySelectorAll(".emoji-btn").forEach(button => {
+			button.addEventListener("click", () => {
+				console.log("Emoji button clicked");
+			});
+		});
+
+
+
+
+
 
 		$('[data-action="close"]').on('click', function () {
 			Chats.switchChat();

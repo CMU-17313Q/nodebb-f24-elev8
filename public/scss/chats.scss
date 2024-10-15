@@ -1,38 +1,35 @@
 // chats need a bit of css
+/* Styling for the reaction container */
 .reaction-box {
     display: flex;
     flex-wrap: wrap; /* Allow emojis to wrap to the next line */
     gap: 8px; /* Space between emojis */
-    margin-top: 10px; /* Space above the reaction box */
-    padding: 10px; /* Padding inside the reaction box */
+    margin-top: 10px; /* Adjusted the margin to provide more spacing from the message */
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 15px; /* Rounded corners for the container */
+    padding: 10px; /* Padding for the emoji box */
     background-color: #f9f9f9; /* Light background color */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    width: 100%; /* Ensure it takes full width of the parent */
-    overflow-x: visible; /* Allow horizontal expansion */
-    overflow-y: visible; /* Allow vertical expansion */
+    max-width: 100%; /* Ensure it takes full width of the parent */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
 }
 
+/* Styling for each emoji button */
 .emoji-btn {
-    background: none;
-    border: none;
+    background-color: #f0f0f0; /* Lighter background color for buttons */
+    border: 2px solid #28a745; /* Green border around each emoji button */
+    border-radius: 15px; /* Rounded corners for the buttons */
+    padding: 4px 12px; /* Padding to make the buttons larger */
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    font-size: 1.2em; /* Increase emoji size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.emoji-btn .emoji {
-    font-size: 1.5em;
-}
-
-.emoji-btn .count {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.chat-message-reactions .reaction:hover {
-    background-color: #ced4da;
+.emoji-btn:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
 }
 // added new till here
 

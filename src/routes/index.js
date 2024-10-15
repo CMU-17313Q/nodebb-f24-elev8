@@ -8,7 +8,10 @@ const express = require('express');
 const meta = require('../meta');
 const controllers = require('../controllers');
 const controllerHelpers = require('../controllers/helpers');
+
+
 const plugins = require('../plugins');
+const SocketPlugins = plugins.SocketPlugins;
 
 const authRoutes = require('./authentication');
 const writeRoutes = require('./write');
@@ -68,6 +71,7 @@ _mounts.post = (app, name, middleware, controllers) => {
 	];
 	app.get(`/${name}/:pid`, middleware.busyCheck, middlewares, controllers.posts.redirectToPost);
 	app.get(`/api/${name}/:pid`, middlewares, controllers.posts.redirectToPost);
+
 };
 
 _mounts.tags = (app, name, middleware, controllers) => {
@@ -168,6 +172,30 @@ function addCoreRoutes(app, router, middleware, mounts) {
 	}
 
 	app.use(middleware.privateUploads);
+
+		// Create a new route for the reaction API
+	app.post('/api/chat/:roomId/reaction', async (req, res) => {
+		try {
+			const roomId = req.params.roomId;
+			const uid = req.user.uid;
+			const messageId = req.body.messageId;
+			const emoji = req.body.emoji;
+
+			// Call the SocketPlugins.emojiReactions.addReaction function
+			SocketPlugins.emojiReactions.addReaction(socket, { roomId, messageId, emoji }, (err, result) => {
+				console.log('Reaction added:', result);
+				if (err) {
+					console.error(err);
+					res.status(500).json({ success: false, error: 'An error occurred' });
+				} else {
+					res.json(result);
+				}
+			});
+		} catch (err) {
+			console.error(err);
+			res.status(500).json({ success: false, error: 'An error occurred' });
+		}
+	});
 
 	const statics = [
 		{ route: '/assets', path: path.join(__dirname, '../../build/public') },

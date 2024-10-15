@@ -36,25 +36,30 @@
 
 <script>
     document.querySelectorAll('.emoji-btn').forEach(button => {
-        button.addEventListener('click', async function() {
+        button.addEventListener('click', async function () {
             const reaction = this.getAttribute('data-reaction');
-            const roomId = this.closest('[data-roomid]').getAttribute('data-roomid'); 
+            const roomId = this.closest('[data-roomid]').getAttribute('data-roomid');
+            const messageId = this.closest('.message-body-wrapper').getAttribute('data-messageid');
             const uid = app.user.uid;
 
             try {
-                const response = await fetch(`/api/chat/${roomId}/reaction`, { 
+                const response = await fetch(`/api/chat/${roomId}/reaction`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ uid, emoji: reaction })
+                    body: JSON.stringify({ uid, messageId, emoji: reaction })
                 });
+
                 const result = await response.json();
+                console.log('Reaction response:', result);
+
                 if (result.success) {
                     const countSpan = this.querySelector('.count');
                     countSpan.textContent = parseInt(countSpan.textContent) + 1;
                 } else {
-                    alert('Failed to add reaction.');
+                    console.error("Error message:", result.error);
+                    alert('Failed to add reaction: ' + (result.error || 'Unknown error'));
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -62,27 +67,8 @@
             }
         });
     });
-
-    // Real-time updates
-    const socket = io();
-    socket.on('reaction:add', function(data) {
-        const { roomId, emoji } = data; 
-        const button = document.querySelector(`[data-roomid="${roomId}"] .emoji-btn[data-reaction="${emoji}"]`); 
-        if (button) {
-            const countSpan = button.querySelector('.count');
-            countSpan.textContent = parseInt(countSpan.textContent) + 1;
-        }
-    });
-
-    socket.on('reaction:remove', function(data) {
-        const { roomId, emoji } = data; // Change pid to roomId
-        const button = document.querySelector(`[data-roomid="${roomId}"] .emoji-btn[data-reaction="${emoji}"]`); 
-        if (button) {
-            const countSpan = button.querySelector('.count');
-            countSpan.textContent = parseInt(countSpan.textContent) - 1;
-        }
-    });
 </script>
+
 
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">

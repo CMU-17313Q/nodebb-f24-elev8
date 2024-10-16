@@ -35,38 +35,38 @@
 		</div>
 
 <script>
-    document.querySelectorAll('.emoji-btn').forEach(button => {
-        button.addEventListener('click', async function () {
-            const reaction = this.getAttribute('data-reaction');
-            const roomId = this.closest('[data-roomid]').getAttribute('data-roomid');
-            const messageId = this.closest('.message-body-wrapper').getAttribute('data-messageid');
-            const uid = app.user.uid;
+	document.querySelectorAll('.emoji-btn').forEach(button => {
+		button.addEventListener('click', async function () {
+			const reaction = this.getAttribute('data-reaction');
+			const roomId = this.closest('[data-roomid]').getAttribute('data-roomid');
+			const messageId = this.closest('.chat-message').getAttribute('data-mid');
+			const uid = this.closest('.chat-message').getAttribute('data-uid');
 
-            try {
-                const response = await fetch(`/api/chat/${roomId}/reaction`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ uid, messageId, emoji: reaction })
-                });
+			try {
+				const response = await fetch(`/api/chat/${roomId}/reaction`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ uid, messageId, emoji: reaction })
+				});
 
-                const result = await response.json();
-                console.log('Reaction response:', result);
+				const result = await response.json();
+				console.log('Reaction response:', result);
 
-                if (result.success) {
-                    const countSpan = this.querySelector('.count');
-                    countSpan.textContent = parseInt(countSpan.textContent) + 1;
-                } else {
-                    console.error("Error message:", result.error);
-                    alert('Failed to add reaction: ' + (result.error || 'Unknown error'));
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred while adding the reaction.');
-            }
-        });
-    });
+				if (result.success) {
+					const countSpan = this.querySelector('.count');
+					countSpan.textContent = parseInt(countSpan.textContent) + 1;
+				} else {
+					console.error("Error message:", result.error);
+					alert('Failed to add reaction: ' + (result.error || 'Unknown error'));
+				}
+			} catch (error) {
+				console.error('Error:', error);
+				alert('An error occurred while adding the reaction.');
+			}
+		});
+	});
 </script>
 
 

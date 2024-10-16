@@ -50,6 +50,17 @@ define('quickreply', [
 			},
 		});
 
+		const style = `
+		<style>
+		  .quickreply-suggested-responses {
+			margin-top: 5px;
+			display: flex;
+			flex-wrap: wrap;
+		  }
+		</style>`;
+
+		$('head').append(style);
+
 		const suggestedResponsesHtml = `
 		<div class="quickreply-suggested-responses">
 		  <span class="quickreply-suggested-response">Button 1</span>

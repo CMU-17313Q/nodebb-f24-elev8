@@ -50,6 +50,18 @@ define('quickreply', [
 			},
 		});
 
+		const suggestedResponsesHtml = `
+		<div class="quickreply-suggested-responses">
+		  <span class="quickreply-suggested-response">Button 1</span>
+		  <span class="quickreply-suggested-response">Button 2</span>
+		</div>
+	  `;
+
+		const quickReplyContainer = $('[component="topic/quickreply/container"]');
+		const quickReplyMessage = quickReplyContainer.find('.quickreply-message');
+	
+		quickReplyMessage.find('textarea').after(suggestedResponsesHtml);
+
 		let ready = true;
 		components.get('topic/quickreply/button').on('click', function (e) {
 			e.preventDefault();

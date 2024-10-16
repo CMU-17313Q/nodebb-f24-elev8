@@ -52,11 +52,21 @@ define('quickreply', [
 
 		const style = `
 		<style>
-		  .quickreply-suggested-responses {
-			margin-top: 5px;
-			display: flex;
-			flex-wrap: wrap;
-		  }
+		  	.quickreply-suggested-responses {
+				margin-top: 5px;
+				display: flex;
+				flex-wrap: wrap;
+		  	}
+			.quickreply-suggested-response {
+          		display: inline-block;
+          		padding: 5px 10px;
+          		margin-right: 5px;
+          		margin-bottom: 5px;
+          		background-color: #e0e7ff;
+          		border-radius: 5px;
+          		cursor: pointer;
+          		color: #1a237e;
+        	}
 		</style>`;
 
 		$('head').append(style);

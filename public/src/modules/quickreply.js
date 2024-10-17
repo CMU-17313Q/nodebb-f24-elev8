@@ -97,7 +97,7 @@ define('quickreply', [
 			if (!currentText.trim()) {
 				textarea.val(buttonText);
 			} else {
-				console.log(buttonText);
+				textarea.val(currentText + '\n' + buttonText);
 			}
 		});
 

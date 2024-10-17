@@ -85,11 +85,11 @@ define('quickreply', [
 
 		const quickReplyContainer = $('[component="topic/quickreply/container"]');
 		const quickReplyMessage = quickReplyContainer.find('.quickreply-message');
-	
+
 		quickReplyMessage.find('textarea').after(suggestedResponsesHtml);
-		
+
 		$(document).on('click', '.quickreply-suggested-response', function () {
-			const buttonText = $(this)["0"].innerText;
+			const buttonText = $(this)['0'].innerText;
 			const textarea = components.get('topic/quickreply/text');
 
 			const currentText = textarea.val();
@@ -100,9 +100,8 @@ define('quickreply', [
 				textarea.val(currentText + '\n' + buttonText);
 			}
 
-			textarea[0].selectionStart = 
-			textarea[0].selectionEnd = 
-			textarea.val().length;
+			textarea[0].selectionStart = textarea.val().length;
+			textarea[0].selectionEnd = textarea.val().length;
 
 			textarea.trigger('input');
 		});

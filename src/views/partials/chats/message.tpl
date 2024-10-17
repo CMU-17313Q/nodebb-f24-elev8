@@ -42,6 +42,7 @@
             const messageId = this.closest('.message-body-wrapper').getAttribute('data-messageid');
             const uid = app.user.uid;
 
+
             console.log('Room ID:', roomId);
             console.log('Message ID:', messageId);
 
@@ -71,7 +72,6 @@
         });
     });
 </script>
-
 
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">

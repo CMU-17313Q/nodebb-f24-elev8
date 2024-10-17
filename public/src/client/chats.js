@@ -117,9 +117,9 @@ define('forum/chats', [
 
 		});
 
-		document.querySelectorAll(".emoji-btn").forEach(button => {
-			button.addEventListener("click", () => {
-				console.log("Emoji button clicked");
+		document.querySelectorAll('.emoji-btn').forEach((button) => {
+			button.addEventListener('click', () => {
+				console.log('Emoji button clicked');
 			});
 		});
 

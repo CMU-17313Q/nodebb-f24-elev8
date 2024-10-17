@@ -11,8 +11,6 @@ const controllerHelpers = require('../controllers/helpers');
 
 
 const plugins = require('../plugins');
-const SocketPlugins = plugins.SocketPlugins;
-
 const authRoutes = require('./authentication');
 const writeRoutes = require('./write');
 const helpers = require('./helpers');
@@ -71,7 +69,6 @@ _mounts.post = (app, name, middleware, controllers) => {
 	];
 	app.get(`/${name}/:pid`, middleware.busyCheck, middlewares, controllers.posts.redirectToPost);
 	app.get(`/api/${name}/:pid`, middlewares, controllers.posts.redirectToPost);
-
 };
 
 _mounts.tags = (app, name, middleware, controllers) => {
@@ -200,7 +197,6 @@ function addCoreRoutes(app, router, middleware, mounts) {
 	app.use(controllers['404'].handle404);
 	app.use(controllers.errors.handleURIErrors);
 	app.use(controllers.errors.handleErrors);
-	
 }
 
 function addRemountableRoutes(app, router, middleware, mounts) {

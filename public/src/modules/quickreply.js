@@ -99,6 +99,10 @@ define('quickreply', [
 			} else {
 				textarea.val(currentText + '\n' + buttonText);
 			}
+
+			textarea[0].selectionStart = 
+			textarea[0].selectionEnd = 
+			textarea.val().length;
 		});
 
 		let ready = true;

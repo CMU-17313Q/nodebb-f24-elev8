@@ -78,6 +78,8 @@ define('quickreply', [
 		<div class="quickreply-suggested-responses">
 		  <span class="quickreply-suggested-response">Button 1</span>
 		  <span class="quickreply-suggested-response">Button 2</span>
+		  <span class="quickreply-suggested-response">Button 3</span>
+		  <span class="quickreply-suggested-response">Button 4</span>
 		</div>
 	  `;
 

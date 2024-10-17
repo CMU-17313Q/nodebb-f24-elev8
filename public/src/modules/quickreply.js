@@ -87,6 +87,10 @@ define('quickreply', [
 		const quickReplyMessage = quickReplyContainer.find('.quickreply-message');
 	
 		quickReplyMessage.find('textarea').after(suggestedResponsesHtml);
+		
+		$(document).on('click', '.quickreply-suggested-response', function () {
+			console.log($(this)["0"].innerText);
+		});
 
 		let ready = true;
 		components.get('topic/quickreply/button').on('click', function (e) {

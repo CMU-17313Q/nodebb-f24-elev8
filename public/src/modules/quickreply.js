@@ -76,10 +76,10 @@ define('quickreply', [
 
 		const suggestedResponsesHtml = `
 		<div class="quickreply-suggested-responses">
-		  <span class="quickreply-suggested-response">Button 1</span>
-		  <span class="quickreply-suggested-response">Button 2</span>
-		  <span class="quickreply-suggested-response">Button 3</span>
-		  <span class="quickreply-suggested-response">Button 4</span>
+		  <span class="quickreply-suggested-response">Thank you!</span>
+		  <span class="quickreply-suggested-response">Makes sense.</span>
+		  <span class="quickreply-suggested-response">Sounds Good!</span>
+		  <span class="quickreply-suggested-response">Could you clarify further?</span>
 		</div>
 	  `;
 

@@ -67,6 +67,9 @@ define('quickreply', [
           		cursor: pointer;
           		color: #1a237e;
         	}
+	        .quickreply-suggested-response:hover {
+				background-color: #c5cae9;
+			}
 		</style>`;
 
 		$('head').append(style);

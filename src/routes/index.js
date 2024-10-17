@@ -172,31 +172,6 @@ function addCoreRoutes(app, router, middleware, mounts) {
 	}
 
 	app.use(middleware.privateUploads);
-
-		// Create a new route for the reaction API
-	app.post('/api/chat/:roomId/reaction', async (req, res) => {
-		try {
-			const roomId = req.params.roomId;
-			const uid = req.user.uid;
-			const messageId = req.body.messageId;
-			const emoji = req.body.emoji;
-
-			// Call the SocketPlugins.emojiReactions.addReaction function
-			SocketPlugins.emojiReactions.addReaction(socket, { roomId, messageId, emoji }, (err, result) => {
-				console.log('Reaction added:', result);
-				if (err) {
-					console.error(err);
-					res.status(500).json({ success: false, error: 'An error occurred' });
-				} else {
-					res.json(result);
-				}
-			});
-		} catch (err) {
-			console.error(err);
-			res.status(500).json({ success: false, error: 'An error occurred' });
-		}
-	});
-
 	const statics = [
 		{ route: '/assets', path: path.join(__dirname, '../../build/public') },
 		{ route: '/assets', path: path.join(__dirname, '../../public') },

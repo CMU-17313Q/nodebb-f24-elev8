@@ -90,6 +90,8 @@ define('quickreply', [
 		
 		$(document).on('click', '.quickreply-suggested-response', function () {
 			const buttonText = $(this)["0"].innerText;
+			const textarea = components.get('topic/quickreply/text');
+			console.log(textarea.val());
 		});
 
 		let ready = true;

@@ -89,7 +89,7 @@ define('quickreply', [
 		quickReplyMessage.find('textarea').after(suggestedResponsesHtml);
 		
 		$(document).on('click', '.quickreply-suggested-response', function () {
-			console.log($(this)["0"].innerText);
+			const buttonText = $(this)["0"].innerText;
 		});
 
 		let ready = true;

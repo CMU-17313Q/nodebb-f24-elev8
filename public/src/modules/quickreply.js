@@ -103,6 +103,8 @@ define('quickreply', [
 			textarea[0].selectionStart = 
 			textarea[0].selectionEnd = 
 			textarea.val().length;
+
+			textarea.trigger('input');
 		});
 
 		let ready = true;

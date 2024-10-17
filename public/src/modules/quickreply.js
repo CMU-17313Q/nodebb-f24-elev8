@@ -93,6 +93,12 @@ define('quickreply', [
 			const textarea = components.get('topic/quickreply/text');
 
 			const currentText = textarea.val();
+
+			if (!currentText.trim()) {
+				textarea.val(buttonText);
+			} else {
+				console.log(buttonText);
+			}
 		});
 
 		let ready = true;

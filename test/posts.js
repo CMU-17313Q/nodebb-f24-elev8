@@ -76,6 +76,12 @@ describe('Post\'s', () => {
             const censoredContent = censorBadWords(content);
             assert.strictEqual(censoredContent, 'This is a ******* and **** test');
         });
+
+        it('should handle mixed case bad words', function () {
+            const content = 'This is a bitch and BITCH test';
+            const censoredContent = censorBadWords(content);
+            assert.strictEqual(censoredContent, 'This is a ***** and ***** test');
+        });
     });
 
 	it('should update category teaser properly', async () => {

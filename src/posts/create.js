@@ -150,10 +150,9 @@ module.exports = function (Posts) {
 			throw new Error('[[error:invalid-pid]]');
 		}
 	}
-
 };
 
 module.exports.utils = {
-    loadBadWords,
-    censorBadWords,
+	loadBadWords,
+	censorBadWords,
 };

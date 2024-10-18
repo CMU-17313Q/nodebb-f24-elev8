@@ -17,7 +17,7 @@
   <img width="1088" alt="Screenshot 2024-10-18 at 5 47 34 PM" src="https://github.com/user-attachments/assets/05223a98-0111-4757-b3a1-daea3fddc8ac">
 
 - create a new topic
-- Write anything that has an innapropriate word in it and submit it
+- Write anything that has an innapropriate word in the post content box and then press submit:
 <img width="1270" alt="Screenshot 2024-10-18 at 5 40 17 PM" src="https://github.com/user-attachments/assets/82ce5d49-f027-4d18-afa8-68bc85cdb628">
 
 - If the word is in our dictionary of bad words, it will get censored and look like this:

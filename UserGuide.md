@@ -1,4 +1,4 @@
-# ELEV8's User Guide
+<img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/5e55dede-c3f3-4cae-83c0-d99e2116521e"># ELEV8's User Guide
 
 ## User Story 1: Detection of inappropriate words
 
@@ -10,6 +10,16 @@
 1- The system checks each word in a user's post or reply against a predefined dictionary of inappropriate words.
 
 2- If an inappropriate word is detected, the word is replaceed with asterisks. 
+
+**How to test this feature: **
+- log into NodeBB
+- Choose one of the categories by clicking on one of them
+- create a new topic
+- Write anything that has an innapropriate word in it and submit it
+<img width="1270" alt="Screenshot 2024-10-18 at 5 40 17 PM" src="https://github.com/user-attachments/assets/82ce5d49-f027-4d18-afa8-68bc85cdb628">
+- If the word is in our dictionary of bad words, you'll see something like this:
+ <img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/cd1885e2-63bf-4549-a47c-d836848bb6d4">
+
 
 ## User Story 2: Anonymous posts
 

@@ -24,6 +24,8 @@ const file = require('../src/file');
 const helpers = require('./helpers');
 const utils = require('../src/utils');
 const request = require('../src/request');
+const fs = require('fs');
+const {loadBadWords, censorBadWords } = require('../src/posts/create').utils;
 
 describe('Post\'s', () => {
 	let voterUid;
@@ -50,6 +52,31 @@ describe('Post\'s', () => {
 		}));
 		await groups.join('Global Moderators', globalModUid);
 	});
+
+	describe('censorBadWords', function () {
+        before(function () {
+            // Mock the fs.readFileSync function to return a list of bad words
+            const originalReadFileSync = fs.readFileSync;
+            fs.readFileSync = function (filePath, encoding) {
+                if (filePath === path.join(__dirname, '../bad-words.txt') && encoding === 'utf8') {
+                    return 'badword1\nbadword2';
+                }
+                return originalReadFileSync.apply(this, arguments);
+            };
+            loadBadWords();
+        });
+
+        after(function () {
+            // Restore the original fs.readFileSync function
+            delete require.cache[require.resolve('fs')];
+        });
+
+		it('should handle content with special characters', function () {
+            const content = 'This is a asshole and fuck! test';
+            const censoredContent = censorBadWords(content);
+            assert.strictEqual(censoredContent, 'This is a ******* and **** test');
+        });
+    });
 
 	it('should update category teaser properly', async () => {
 		const getCategoriesAsync = async () => (await request.get(`${nconf.get('url')}/api/categories`, { })).body;

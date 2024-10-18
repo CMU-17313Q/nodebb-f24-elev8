@@ -13,6 +13,7 @@ const groups = require('../groups');
 const privileges = require('../privileges');
 // const document = require('../../node_modules/nodebb-plugin-composer-default/static/lib/composer');
 
+
 // using a set to store bad words for faster search
 let badWords = new Set();
 function loadBadWords() {
@@ -26,6 +27,24 @@ function loadBadWords() {
 }
 
 loadBadWords();
+
+
+function censorBadWords(content) {
+	// console.log('Checking if the words in the post are in the dictionary of bad words');
+	let censoredContent = '';
+	const words = content.split(/\s+/);// Split content into individual words
+	for (const word of words) {
+		const cleanWord = word.replace(/[^\w\s]/gi, '');// Remove special characters before checking
+		if (badWords.has(cleanWord.toLowerCase())) {
+			// Replace bad word with asterisks matching its length
+			const asterisks = '*'.repeat(cleanWord.length);
+			censoredContent += `${asterisks} `;
+		} else {
+			censoredContent += `${word} `;// Add the original word if it's not a bad word
+		}
+	}
+	return censoredContent.trim();
+}
 /*
 function checkifBadWord(content) {
 	console.log('Checking if the words in the post are in the dictionary of bad words');
@@ -110,6 +129,7 @@ module.exports = function (Posts) {
 		return result.post;
 	};
 
+
 	async function addReplyTo(postData, timestamp) {
 		if (!postData.toPid) {
 			return;
@@ -130,20 +150,9 @@ module.exports = function (Posts) {
 			throw new Error('[[error:invalid-pid]]');
 		}
 	}
-	function censorBadWords(content) {
-		// console.log('Checking if the words in the post are in the dictionary of bad words');
-		let censoredContent = '';
-		const words = content.split(/\s+/);// Split content into individual words
-		for (const word of words) {
-			const cleanWord = word.replace(/[^\w\s]/gi, '');// Remove special characters before checking
-			if (badWords.has(cleanWord.toLowerCase())) {
-				// Replace bad word with asterisks matching its length
-				const asterisks = '*'.repeat(cleanWord.length);
-				censoredContent += `${asterisks} `;
-			} else {
-				censoredContent += `${word} `;// Add the original word if it's not a bad word
-			}
-		}
-		return censoredContent.trim();
-	}
+};
+
+module.exports.utils = {
+	loadBadWords,
+	censorBadWords,
 };

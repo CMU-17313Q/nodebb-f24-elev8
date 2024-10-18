@@ -1,4 +1,4 @@
-<img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/5e55dede-c3f3-4cae-83c0-d99e2116521e"># ELEV8's User Guide
+# ELEV8's User Guide
 
 ## User Story 1: Detection of inappropriate words
 

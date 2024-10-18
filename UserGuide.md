@@ -17,7 +17,8 @@
 - create a new topic
 - Write anything that has an innapropriate word in it and submit it
 <img width="1270" alt="Screenshot 2024-10-18 at 5 40 17 PM" src="https://github.com/user-attachments/assets/82ce5d49-f027-4d18-afa8-68bc85cdb628">
-- If the word is in our dictionary of bad words, you'll see something like this:
+
+- If the word is in our dictionary of bad words, it will get censored and look like this:
  <img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/cd1885e2-63bf-4549-a47c-d836848bb6d4">
 
 

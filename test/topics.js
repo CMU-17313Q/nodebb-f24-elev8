@@ -2537,6 +2537,7 @@ describe('Topic\'s', () => {
 			assert.strictEqual(result.topicData.uid, 3);
 			assert.strictEqual(result.topicData.user.username, 'admin 0');
 			assert.strictEqual(result.topicData.user.displayname, 'admin 0');
+			assert.strictEqual(result.topicData.mainPost.anon, false);
 			done();
 		});
 	});

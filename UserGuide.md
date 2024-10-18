@@ -26,7 +26,7 @@
 5- If the word is in our dictionary of bad words, it will get censored and look like this:
  <img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/cd1885e2-63bf-4549-a47c-d836848bb6d4">
 
-### The automated tests:###
+**Automated testing:** 
 
 Location: The tests for the inappropriate words feature are located in test/posts.js. The actual tests can be found between lines 56 and 92.
 

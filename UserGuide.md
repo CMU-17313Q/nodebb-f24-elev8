@@ -26,6 +26,17 @@
 5- If the word is in our dictionary of bad words, it will get censored and look like this:
  <img width="1359" alt="Screenshot 2024-10-18 at 5 41 39 PM" src="https://github.com/user-attachments/assets/cd1885e2-63bf-4549-a47c-d836848bb6d4">
 
+**The automated tests:**
+Location: The tests for the inappropriate words feature are located in test/posts.js. The actual tests can be found between lines 56 and 92.
+
+What is Being Tested: the tests added focus on ensuring that the inappropriate words feature works correctly by censoring offensive language in the user posts.
+
+The first test sets up a mock bad words list and verifies that the censorBadWords function replaces these words with asterisks in the content.
+
+The second test handles content with no bad words. It confirms that when the censorBadWords function is called on clean content, the text remains unchanged, e.g., "This is a clean test"
+
+The third test deals with special characters and mixed-case bad words (e.g., "This is a BadWord1! and badword2"). It checks that bad words are censored regardless of their case or punctuation, returning the correct censored version of the content.
+
 
 ## User Story 2: Anonymous posts
 

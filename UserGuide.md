@@ -11,7 +11,7 @@
 
 2- If an inappropriate word is detected, the word is replaceed with asterisks. 
 
-**How to test this feature: **
+**How to test this feature:** 
 - log into NodeBB
 - Choose one of the categories by clicking on one of them
   <img width="1088" alt="Screenshot 2024-10-18 at 5 47 34 PM" src="https://github.com/user-attachments/assets/05223a98-0111-4757-b3a1-daea3fddc8ac">
@@ -49,6 +49,8 @@
 3- The task will be considered complete when all emojis are available in the chat reaction system.
 
 **Progress:** We were only able to complete the frontend implementation of the emoji chat feature for this user story.
+
+<img width="289" alt="Screenshot 2024-10-18 at 10 13 18 PM" src="https://github.com/user-attachments/assets/c3454b07-4a31-4bf8-96e3-152ffdf798c4">
 
 **Justification:** While working on the backend logic for emoji reactions, we faced challenges with socket programming, which required real-time synchronization of reactions across multiple users in a chat room. This task involved advanced socket handling techniques beyond my current expertise. Additionally, integrating the emoji reactions into the existing chat system was more complex than expected due to dependencies on real-time updates and performance optimization across different browsers. Although we were able to implement the foundational parts of the feature, including the API endpoint and core logic for handling reactions, the complexity and scope of the task were too large to complete within a single sprint.
 

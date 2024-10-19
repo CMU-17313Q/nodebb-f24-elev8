@@ -17,40 +17,73 @@
 
 		<div component="chat/message/edited" class="text-muted ms-auto {{{ if !messages.edited }}}hidden{{{ end }}}" title="[[global:edited-timestamp, {isoTimeToLocaleString(messages.editedISO, config.userLang)}]]"><i class="fa fa-edit"></i></span></div>
 	</div>
-	<div class="message-body-wrapper">
-		<div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto text-break">
-			{messages.content}
-		</div>
-		<!-- Emoji Reaction Buttons -->
-		<div class="reaction-box">
-			<button class="emoji-btn" data-reaction="👍">
-				<span class="emoji">👍</span> <span class="count">0</span>
-			</button>
-			<button class="emoji-btn" data-reaction="❤️">
-				<span class="emoji">❤️</span> <span class="count">0</span>
-			</button>
-			<button class="emoji-btn" data-reaction="😂">
-				<span class="emoji">😂</span> <span class="count">0</span>
-			</button>
-			<button class="emoji-btn" data-reaction="😮">
-				<span class="emoji">😮</span> <span class="count">0</span>
-			<button class="emoji-btn" data-reaction="👏">
-				<span class="emoji">👏</span> <span class="count">0</span>
-			</button>
-			<button class="emoji-btn" data-reaction="🎉">
-				<span class="emoji">🎉</span> <span class="count">0</span>
-			</button>
-			<button class="emoji-btn" data-reaction="💯">
-				<span class="emoji">💯</span> <span class="count">0</span>
-			</button>
+<div class="message-body-wrapper" data-messageid="{messageId}" data-roomid="{roomId}">
+    <div component="chat/message/body" class="message-body ps-0 py-0 overflow-auto text-break">
+        {messages.content}
+    </div>
+    <!-- Emoji Reaction Buttons -->
+    <div class="reaction-box">
+        <button class="emoji-btn" data-reaction="👍">
+            <span class="emoji">👍</span> <span class="count">0</span>
+        </button>
+        <button class="emoji-btn" data-reaction="❤️">
+            <span class="emoji">❤️</span> <span class="count">0</span>
+        </button>
+        <button class="emoji-btn" data-reaction="😂">
+            <span class="emoji">😂</span> <span class="count">0</span>
+        </button>
+		<button class="emoji-btn" data-reaction="😮">
+			<span class="emoji">😮</span> <span class="count">0</span>
+		</button>
+		<button class="emoji-btn" data-reaction="👏">
+			<span class="emoji">👏</span> <span class="count">0</span>
+		</button>
+		<button class="emoji-btn" data-reaction="🎉">
+			<span class="emoji">🎉</span> <span class="count">0</span>
+		</button>
+		<button class="emoji-btn" data-reaction="💯">
+			<span class="emoji">💯</span> <span class="count">0</span>
+		</button>
+    </div>
 </div>
+<script>
+    document.querySelectorAll('.emoji-btn').forEach(button => {
+        button.addEventListener('click', async function () {
+            const reaction = this.getAttribute('data-reaction');
+            const roomId = this.closest('[data-roomid]').getAttribute('data-roomid');
+            const messageId = this.closest('.message-body-wrapper').getAttribute('data-messageid');
+            const uid = app.user.uid;
 
-<!-- Existing controls and reply button -->
-<div component="chat/message/controls" class="position-relative">
-    <div class="btn-group border shadow-sm controls position-absolute bg-body end-0" style="bottom:1rem;">
-        <!-- IMPORT partials/chats/add-reaction.tpl -->
-        <button class="btn btn-sm btn-link" data-action="reply" title="[[topic:reply]]"><i class="fa fa-reply"></i></button>
-		</div>
+
+            console.log('Room ID:', roomId);
+            console.log('Message ID:', messageId);
+
+            try {
+                const response = await fetch(`/api/chat/${roomId}/reaction`, { // Ensure the correct endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ uid, messageId, emoji: reaction })
+                });
+
+                const result = await response.json();
+                console.log('Reaction response:', result);
+
+                if (result.success) {
+                    const countSpan = this.querySelector('.count');
+                    countSpan.textContent = parseInt(countSpan.textContent) + 1;
+                } else {
+                    console.error("Error message:", result.error);
+                    alert('Failed to add reaction: ' + (result.error || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while adding the reaction.');
+            }
+        });
+    });
+</script>
 
 		<!-- Existing controls and reply button -->
 		<div component="chat/message/controls" class="position-relative">

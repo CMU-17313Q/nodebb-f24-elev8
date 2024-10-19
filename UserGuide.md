@@ -38,6 +38,7 @@ The second test handles content with no bad words. It confirms that when the cen
 
 The third test deals with special characters and mixed-case bad words (e.g., "This is a BadWord1! and badword2"). It checks that bad words are censored regardless of their case or punctuation, returning the correct censored version of the content.
 
+**Why the Tests are Sufficient:** The tests thoroughly cover all key aspects of the inappropriate words filtering feature. The first test ensures that the censoring mechanism functions as intended by replacing offensive words with asterisks, validating the core functionality. The second test confirms that clean content remains unchanged, which is crucial for maintaining the integrity of user posts that do not contain offensive language. The third test addresses edge cases, such as handling special characters and mixed-case bad words, ensuring that inappropriate content is caught regardless of variations in punctuation or capitalization. These tests cover the full spectrum of expected use cases, providing confidence that the feature will perform reliably in different scenarios.
 
 ## User Story 2: Anonymous posts
 
@@ -75,6 +76,18 @@ Fill in the Title and Content of your post as usual. You can also attach files o
 <img width="1230" alt="Screenshot 2024-10-18 at 10 24 19 PM" src="https://github.com/user-attachments/assets/1c6c39b5-4ece-4624-9d99-1a7d7faffe14">
 
 **Note:** You can also use the anonymous posting feature to reply to existing topics or posts. Simply click the Reply button within any topic, check the Anonymous checkbox, and submit your reply anonymously. However, in this scenario, we are demonstrating the process for creating a new topic.
+
+**Automated testing:** 
+
+**Location:** The tests for the anonymous feature are located in test/topics.js. The relevant tests can be found between lines 2504 and 2560.
+
+**What is Being Tested:** The tests added focus on ensuring that the anonymous posting feature works correctly in the forum.
+
+The first test checks that when a new post is created with the anonymous flag set to false, the post is linked to the correct user and is not anonymous. It verifies the post’s metadata to ensure the correct user information is displayed.
+
+The second test verifies that when a post is created with the anonymous flag set to true, the post correctly hides the user's identity. It checks that the post is marked as anonymous in the database and that the anonymous flag remains true when the post is fetched.
+
+**Why the Tests are Sufficient:** These tests cover the core functionality of the anonymous feature, ensuring that the system correctly handles both anonymous and non-anonymous posts. By validating the behavior of the anonymous flag in different scenarios, these tests ensure that the user’s identity is appropriately masked or revealed depending on their choice. The tests also account for proper storage of this data in the database, making them comprehensive for the feature.
 
 
 ## User Story 3: Emoji Reactions in Chat Section

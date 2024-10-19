@@ -28,9 +28,9 @@
 
 **Automated testing:** 
 
-Location: The tests for the inappropriate words feature are located in test/posts.js. The actual tests can be found between lines 56 and 92.
+**Location:** The tests for the inappropriate words feature are located in test/posts.js. The actual tests can be found between lines 56 and 92.
 
-What is Being Tested: the tests added focus on ensuring that the inappropriate words feature works correctly by censoring offensive language in the user posts.
+**What is Being Tested:** the tests added focus on ensuring that the inappropriate words feature works correctly by censoring offensive language in the user posts.
 
 The first test sets up a mock bad words list and verifies that the censorBadWords function replaces these words with asterisks in the content.
 

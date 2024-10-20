@@ -125,6 +125,16 @@ The second test verifies that when a post is created with the anonymous flag set
 **How to test this feature:**
 
 1- Login to Nodebb.
-2- Choose any message you would like to respond to/ create a new chat.
-3- THere should be a "quick reply" button next to the chat box. Once you click on the button, a message should automatically be inserted into the quick reply text box.
+
+2- Choose any message you would like to respond to. You should see a quick reply button at the bottom of the page, along with the other suggested responses.
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/b6298659-6394-4f11-bfb0-b2cc90e841bf">
+
+3- Select a suggested response to reply to the message,it should automatically be inserted into the quick reply text box. Then click on the quick reply button to post your message.
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4804b847-457f-4996-b3e4-d3c4fc8352ee">
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/45b1a75e-5a22-4c4f-80cb-0c339526d79a">
+
+
+
+
 

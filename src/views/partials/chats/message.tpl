@@ -32,8 +32,15 @@
         <button class="emoji-btn" data-reaction="😂">
             <span class="emoji">😂</span> <span class="count">0</span>
         </button>
+
 		<button class="emoji-btn" data-reaction="😮">
 			<span class="emoji">😮</span> <span class="count">0</span>
+
+
+		<button class="emoji-btn" data-reaction="😮">
+			<span class="emoji">😮</span> <span class="count">0</span>
+		</button>
+
 		<button class="emoji-btn" data-reaction="👏">
 			<span class="emoji">👏</span> <span class="count">0</span>
 		</button>
@@ -43,6 +50,7 @@
 		<button class="emoji-btn" data-reaction="💯">
 			<span class="emoji">💯</span> <span class="count">0</span>
 		</button>
+
 		<button class="emoji-btn" data-reaction="😊">
 			<span class="emoji">😊</span> <span class="count">0</span>
 		</button>
@@ -52,6 +60,7 @@
 		<button class="emoji-btn" data-reaction="❓">
         	<span class="emoji">❓</span> <span class="count">0</span>
     	</button>
+
     </div>
 </div>
 <script>

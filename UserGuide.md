@@ -132,6 +132,9 @@ The second test verifies that when a post is created with the anonymous flag set
 3- Select a suggested response to reply to the message,it should automatically be inserted into the quick reply text box. Then click on the quick reply button to post your message.
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/4804b847-457f-4996-b3e4-d3c4fc8352ee">
 
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/45b1a75e-5a22-4c4f-80cb-0c339526d79a">
+
+
 
 
 

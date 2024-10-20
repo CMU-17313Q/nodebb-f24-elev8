@@ -134,7 +134,7 @@ The second test verifies that when a post is created with the anonymous flag set
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/45b1a75e-5a22-4c4f-80cb-0c339526d79a">
 
-
+**Automated testing:** Automated testing is not ideal for this feature as it is purely frontend, involving simple button clicks to insert predefined text into the reply box. Since no complex logic or backend interaction is required, manual testing is sufficient to verify the functionality.
 
 
 

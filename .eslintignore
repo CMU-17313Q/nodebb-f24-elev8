@@ -20,4 +20,3 @@ test/files
 *.min.js
 install/docker/
 plato_reports/
-/public/src/app.js

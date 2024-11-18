@@ -11,6 +11,7 @@ const topics = require('../topics');
 const categories = require('../categories');
 const groups = require('../groups');
 const privileges = require('../privileges');
+const translate = require('../translate');
 // const document = require('../../node_modules/nodebb-plugin-composer-default/static/lib/composer');
 
 
@@ -73,6 +74,7 @@ module.exports = function (Posts) {
 		let content = data.content.toString();
 		const timestamp = data.timestamp || Date.now();
 		const isMain = data.isMain || false;
+		const [isEnglish, translatedContent] = await translate.translate(data);
 
 		if (!uid && parseInt(uid, 10) !== 0) {
 			throw new Error('[[error:invalid-uid]]');
@@ -93,6 +95,8 @@ module.exports = function (Posts) {
 			content: data.content,
 			timestamp: timestamp,
 			anon: data.isAnonymous,
+			translatedContent: translatedContent,
+			isEnglish: isEnglish,
 		};
 
 		if (data.toPid) {

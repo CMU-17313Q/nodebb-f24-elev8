@@ -20,3 +20,4 @@ test/files
 *.min.js
 install/docker/
 plato_reports/
+test/

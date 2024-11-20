@@ -1,0 +1,136 @@
+src/cli/index.js: line 3, col 1, Use the function form of "use strict".
+src/cli/index.js: line 5, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 6, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 10, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 11, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 11, col 1, 'destructuring binding' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 27, col 5, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 28, col 5, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 30, col 5, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 31, col 9, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 31, col 9, 'destructuring binding' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 33, col 13, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 33, col 37, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 56, col 9, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 57, col 38, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 58, col 13, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 64, col 9, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 65, col 21, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 71, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 72, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 73, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 73, col 1, 'destructuring binding' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 74, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 76, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 77, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 78, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 95, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 106, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 107, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 125, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 133, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 134, col 38, 'spread operator' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 134, col 41, 'object spread property' is only available in ES9 (use 'esversion: 9').
+src/cli/index.js: line 141, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 144, col 38, 'spread operator' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 144, col 41, 'object spread property' is only available in ES9 (use 'esversion: 9').
+src/cli/index.js: line 149, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 155, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 161, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 167, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 176, col 24, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 194, col 29, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 204, col 18, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 207, col 30, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 214, col 20, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 220, col 20, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 225, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 232, col 19, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 238, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 244, col 20, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 249, col 1, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 258, col 21, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 259, col 9, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 259, col 80, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 261, col 26, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 265, col 47, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 287, col 20, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 288, col 21, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 292, col 13, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 293, col 13, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 296, col 30, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 310, col 14, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 311, col 57, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 323, col 18, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 328, col 9, 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+src/cli/index.js: line 328, col 55, 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 332, col 25, 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+src/cli/index.js: line 5, col 12, 'require' is not defined.
+src/cli/index.js: line 6, col 14, 'require' is not defined.
+src/cli/index.js: line 8, col 1, 'require' is not defined.
+src/cli/index.js: line 10, col 24, 'require' is not defined.
+src/cli/index.js: line 11, col 19, 'require' is not defined.
+src/cli/index.js: line 27, col 20, 'require' is not defined.
+src/cli/index.js: line 28, col 28, 'require' is not defined.
+src/cli/index.js: line 58, col 36, 'require' is not defined.
+src/cli/index.js: line 59, col 17, 'require' is not defined.
+src/cli/index.js: line 60, col 24, 'require' is not defined.
+src/cli/index.js: line 64, col 23, 'require' is not defined.
+src/cli/index.js: line 71, col 15, 'require' is not defined.
+src/cli/index.js: line 72, col 15, 'require' is not defined.
+src/cli/index.js: line 73, col 21, 'require' is not defined.
+src/cli/index.js: line 74, col 15, 'require' is not defined.
+src/cli/index.js: line 76, col 13, 'require' is not defined.
+src/cli/index.js: line 77, col 14, 'require' is not defined.
+src/cli/index.js: line 78, col 18, 'require' is not defined.
+src/cli/index.js: line 80, col 23, 'require' is not defined.
+src/cli/index.js: line 113, col 5, 'require' is not defined.
+src/cli/index.js: line 126, col 9, 'require' is not defined.
+src/cli/index.js: line 134, col 9, 'require' is not defined.
+src/cli/index.js: line 144, col 9, 'require' is not defined.
+src/cli/index.js: line 150, col 9, 'require' is not defined.
+src/cli/index.js: line 156, col 9, 'require' is not defined.
+src/cli/index.js: line 162, col 9, 'require' is not defined.
+src/cli/index.js: line 168, col 9, 'require' is not defined.
+src/cli/index.js: line 187, col 9, 'require' is not defined.
+src/cli/index.js: line 196, col 13, 'require' is not defined.
+src/cli/index.js: line 198, col 13, 'require' is not defined.
+src/cli/index.js: line 212, col 9, 'require' is not defined.
+src/cli/index.js: line 215, col 9, 'require' is not defined.
+src/cli/index.js: line 221, col 9, 'require' is not defined.
+src/cli/index.js: line 226, col 9, 'require' is not defined.
+src/cli/index.js: line 233, col 9, 'require' is not defined.
+src/cli/index.js: line 239, col 9, 'require' is not defined.
+src/cli/index.js: line 245, col 9, 'require' is not defined.
+src/cli/index.js: line 265, col 9, 'require' is not defined.
+src/cli/index.js: line 276, col 17, 'require' is not defined.
+src/cli/index.js: line 301, col 9, 'require' is not defined.
+src/cli/index.js: line 311, col 9, 'require' is not defined.
+src/cli/index.js: line 47, col 9, 'console' is not defined.
+src/cli/index.js: line 48, col 9, 'console' is not defined.
+src/cli/index.js: line 65, col 9, 'console' is not defined.
+src/cli/index.js: line 181, col 17, 'console' is not defined.
+src/cli/index.js: line 182, col 17, 'console' is not defined.
+src/cli/index.js: line 261, col 13, 'console' is not defined.
+src/cli/index.js: line 288, col 9, 'console' is not defined.
+src/cli/index.js: line 315, col 13, 'console' is not defined.
+src/cli/index.js: line 332, col 13, 'console' is not defined.
+src/cli/index.js: line 95, col 20, 'process' is not defined.
+src/cli/index.js: line 100, col 1, 'process' is not defined.
+src/cli/index.js: line 100, col 24, 'process' is not defined.
+src/cli/index.js: line 101, col 14, 'process' is not defined.
+src/cli/index.js: line 112, col 22, 'process' is not defined.
+src/cli/index.js: line 118, col 5, 'process' is not defined.
+src/cli/index.js: line 142, col 9, 'process' is not defined.
+src/cli/index.js: line 209, col 13, 'process' is not defined.
+src/cli/index.js: line 267, col 24, 'process' is not defined.
+src/cli/index.js: line 270, col 13, 'process' is not defined.
+src/cli/index.js: line 298, col 13, 'process' is not defined.
+src/cli/index.js: line 316, col 13, 'process' is not defined.
+src/cli/index.js: line 337, col 5, 'process' is not defined.
+src/cli/index.js: line 101, col 1, 'global' is not defined.
+src/cli/index.js: line 143, col 9, 'global' is not defined.
+src/cli/index.js: line 210, col 13, 'global' is not defined.
+src/cli/index.js: line 299, col 13, 'global' is not defined.
+
+134 errors
